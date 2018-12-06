@@ -43,12 +43,12 @@ CREATE TABLE media(
 	media_id mediumint unsigned not null auto_increment,
 	news_id smallint unsigned,
 	paper_id smallint unsigned,
-	name varch(256),
+	name varchar(256),
 	Primary Key(media_id),
 	Constraint media_ibfk_1
 		FOREIGN KEY(news_id)
 		References news(news_id)
-		On Delete Cascade On Update Cascade
+		On Delete Cascade On Update Cascade,
 	Constraint media_ibfk_2
 		Foreign Key(paper_id)
 		References papers(paper_id)
