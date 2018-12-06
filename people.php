@@ -39,6 +39,7 @@
 					}
 					$toggle = !$toggle;
 					$stmt = $pdo->prepare('SELECT * FROM person WHERE experience = '.$value);
+					$stmt->execute();
 					echo("
 							<div class = 'fullwidth-block'data-bg-color=".$color.">
 								<div class = 'container'>
