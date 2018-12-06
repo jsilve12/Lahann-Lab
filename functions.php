@@ -1,5 +1,7 @@
 <?php
+	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=Lahann','Jonathan', 'Hatter12');
 
+    $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	class level
 	{
 		const __default = self::underGrad;
@@ -31,7 +33,28 @@
 		public $name;
 		public $experience;
 		public $power;
+		public $email;
+		public $department;
+		public $location;
+		public $years;
+		public $mentor;
+		public $photo;
+		public $resume;
 
+		//Constructs for all the values
+		function __construct($named, $experienced, $powerd, $emaild, $departmentd, $locationd, $yearsd, $mentord, $photod, $resumed)
+		{
+			$name = $named;
+			$experience = $experienced;
+			$power = $powerd;
+			$email = $emaild;
+			$department = $departmentd;
+			$location = $locationd;
+			$years = yearsd;
+			$mentor = $mentord;
+			$photo = $photod;
+			$resume = $resumed;
+		}
 	}
 
 	$types = array(
@@ -41,9 +64,9 @@
 		level::visiting => "Visiting Students",
 		level::underGrad => "Undergraduate Students",
 		level::alumPostDoc => "Alumni Post Docs",
-		"Alumni Ph.D Students" => level::alumPhD,
-		"Alumni Masters" => level::alumMasters,
-		"Visiting Students Alumni" => level::alumVisiting,
-		"Alumni Undergrads" => level::alumUnderGrad
+		level::alumPhD => "Alumni Ph.D Students",
+		level::alumMasters => "Alumni Masters",
+		level::alumVisiting => "Visiting Students Alumni",
+		level::alumUnderGrad => "Alumni Undergrads"
 	)
 ?>

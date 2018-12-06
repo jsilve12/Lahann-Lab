@@ -49,25 +49,7 @@
 					");
 				}
 			?>
-			<div class="page-head" data-bg-image="images/page-head-1.jpg">
-				<div class="container">
-					<h2 class="page-title">About us</h2>
-				</div>
-			</div>
-			<div class = "fullwidth-block">
-				<div class = "container">
-					<div class = "row">
-						<h2 class = "section-title">Principal Investigators</h2>
-					</div>
-				</div>
-			</div>
-			<div class = "fullwidth-block" data-bg-color="#edf2f4">
-				<div class = "container">
-					<div class = "row">
-						<h2 class = "section-title">Post Docs</h2>
-					</div>
-				</div>
-			</div>
+
 			<?php include("generic/footer.html"); ?>
 		</div>
 		<script src="js/jquery-1.11.1.min.js"></script>
