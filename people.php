@@ -38,7 +38,7 @@
 						$color = '#FFFFFF';
 					}
 					$toggle = !$toggle;
-					$stmt = $pdo->prepare('SELECT * FROM person WHERE experience = '.$value);
+					$stmt = $pdo->prepare('SELECT * FROM person WHERE experience = '.$key);
 					$stmt->execute();
 					echo("
 							<div class = 'fullwidth-block'data-bg-color=".$color.">
@@ -49,24 +49,24 @@
 					if($key != 0 && $key != 1 && $key != 5 && $key != 6)
 					{
 						$width = 20;
-						if($key == 4) {$width = 100;}
+						if($key == 4) {$width = "100\"' align= \"center\"";}
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
-							echo("<div class = 'post' style='width: ".$width."%'>
+							echo("<div class = 'post' style='width: ".$width."%>
 									<h3 class = 'entry-title'>
 										".$row['name']."
 									</h3>
 									<h4>
 										".$value."
 									</h4>");
-							echo("	<img src = ".$row['photo']." class = 'featured-image'>
-									<a href= person?person=".$row['name']." alt='".$row['name']."'s personal page'/>
+							echo("	<img src = images/".$row['photo']." class = 'featured-image'>
+									<p>".$row['department']."<br>".$row['Education']."<br>".$row['location']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>
 								</div>");
 						}
 					}
 					else
 					{
-						echo("<table style='width:100%>
+						echo("<table style='width:100%'>
 							<tr>
 								<th>Name</th>
 								<th>Experience</th>
@@ -86,6 +86,8 @@
 									<td>".$row['mentor']."</td>
 								</tr>");
 						}
+						echo("
+						</table>");
 					}
 					echo("
 							</div>

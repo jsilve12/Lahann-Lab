@@ -25,15 +25,16 @@
 			<?php
 				include("functions.php");
 				include("generic/header.html");
-				$stmt = $pdo->prepare('SELECT * FROM person WHERE name = '.$GET['person']);
+				$stmt = $pdo->prepare('SELECT * FROM person WHERE person_id = '.$_GET['person']);
 				$stmt->execute();
 				if($stmt->rowCount() != 1)
 				{
 					echo("<h1 class = 'section-title'>We are sorry, but the person that you're looking for doesn't appear in our servers</h1>");
 				}
-				echo("<h1 class = 'section-title'".$stmt[0]['name']."</h1>");
+				$stmt = $stmt->fetchAll();
 				echo("<div class = 'post'>
-						<h2 class = 'entry-title'>".$stmt[0]['experience']." at Lahann Lab
+						<h1 class = 'section-title'>".$stmt[0]['name']."</h1>
+						<h2 class = 'entry-title'>".$types[$stmt[0]['experience']]." at Lahann Lab <br>
 						".$stmt[0]['department']."
 						</h2>
 						<img src = ".$stmt[0]['photo']." class = 'featured-image'/>

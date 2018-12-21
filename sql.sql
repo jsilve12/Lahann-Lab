@@ -54,3 +54,16 @@ CREATE TABLE media(
 		References papers(paper_id)
 		On Delete Cascade On Update Cascade
 ) ENGINE=InnoDB Default Charset=utf8;
+
+CREATE TABLE people_papers(
+	person_id smallint UNSIGNED not null,
+	paper_id smallint UNSIGNED not null,
+	Constraint people_papers_ibfk_1
+		FOREIGN KEY(person_id)
+		References person(person_id)
+		On Delete Cascade On Update Cascade,
+	Constraint people_papers_ibfk_2
+		Foreign Key(paper_id)
+		References papers(paper_id)
+		On Delete Cascade On Update Cascade
+) ENGINE=InnoDB Default Charset=utf8;
