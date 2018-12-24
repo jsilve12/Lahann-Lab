@@ -1400,6 +1400,21 @@ form input[type="submit"], form button, form input[type="reset"] {
     height: 11px;
     background: url(images/arrow-long.png); }
 
+.person {
+  display: inline-block;
+  margin: 4%;
+  padding: 0%;
+  float: center;
+  width: 40%;}
+  .person img{
+    width: 50%
+  }
+@media(max-width:500px){
+  .person{
+    width: 90%;
+  }
+}
+
 .cta {
   text-align: center;
   color: white; }

@@ -26,6 +26,44 @@
 	}
 }
 
+.person{
+	position: relative;
+	margin-bottom: 30px;
+	padding-left: 40px;
+	display: inline-block;
+
+	.featured-image{
+		margin-bottom: 20px;
+		img{
+			max-width: 100%;
+			border-radius: 5px;
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+
+	.entry-title{
+		@include em(24);
+		font-weight: 300;
+		margin: 0 0 10px;
+	}
+	.date{
+		display: block;
+		margin-bottom: 30px;
+		@include em(11);
+	}
+
+	&:after{
+		content:" ";
+		display: block;
+		margin-top: 30px;
+		width: 22px;
+		height: 11px;
+		background: url(images/arrow-long.png);
+	}
+}
+
 .post{
 	position: relative;
 	margin-bottom: 30px;

@@ -1,32 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-
-		<title>Science Labs</title>
-
-		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
-		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="style.css">
-
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
-
-	</head>
+	<?php
+		include("head.html");
+	?>
 	<body>
 		<div class="site-content">
 			<?php
 				include("functions.php");
 				include("generic/header.html");
 				$toggle = false;
+				$gradStud = 0;
 				foreach($types as $key => $value)
 				{
 					if($toggle)
@@ -48,11 +32,12 @@
 									</div>");
 					if($key != 0 && $key != 1 && $key != 5 && $key != 6)
 					{
-						$width = 20;
-						if($key == 4) {$width = "100\"' align= \"center\"";}
+						$width = "float:\"left\";\'";
+						if($key == 4) {$width = "width:100%;'";}
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
-							echo("<div class = 'post' style='width: ".$width."%>
+							if($key == 2) {$gradStud +=1;}
+							echo("<div class = 'post person' style='".$width.">
 									<h3 class = 'entry-title'>
 										".$row['name']."
 									</h3>
@@ -62,6 +47,11 @@
 							echo("	<img src = images/".$row['photo']." class = 'featured-image'>
 									<p>".$row['department']."<br>".$row['Education']."<br>".$row['location']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>
 								</div>");
+							if($gradStud == 4)
+							{
+								$gradStud = 0;
+								echo("<br>");
+							}
 						}
 					}
 					else
