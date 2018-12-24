@@ -59,7 +59,6 @@
 						echo("<table style='width:100%'>
 							<tr>
 								<th>Name</th>
-								<th>Experience</th>
 								<th>Department</th>
 								<th>Location</th>
 								<th>Years</th>
@@ -67,13 +66,15 @@
 							</tr>");
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
+							$stmt1 = $pdo->prepare("SELECT * FROM person WHERE person_id = ".$row['mentor']);
+							$stmt1->execute();
+							$mentor = $stmt1->fetch(PDO::FETCH_ASSOC);
 							echo("<tr>
 									<td>".$row['name']."</td>
-									<td>".$row['experience']."</td>
 									<td>".$row['department']."</td>
-									<td>".$row['locations']."</td>
+									<td>".$row['location']."</td>
 									<td>".$row['years']."</td>
-									<td>".$row['mentor']."</td>
+									<td>".$mentor['name']."</td>
 								</tr>");
 						}
 						echo("
