@@ -1,0 +1,2 @@
+INSERT INTO `person`(`name`, `experience`, `power`, `email`, `department`, `location`, `years`, `mentor`, `photo`, `resum`, `Education`, `Research`, `Research_Experience`, `Awards`) VALUES("Xiaopei
+  Deng",9,0,NULL,NULL,"Magic Leap Sr. Research Scientist","2007-2013",NULL,"XiaopeiDeng.jpg",NULL,NULL,NULL,NULL,NULL); 
