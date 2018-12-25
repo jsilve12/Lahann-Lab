@@ -19,6 +19,7 @@ for tab in tabs:
 	try:
 		photo = td[0].string.split()
 		photo = photo[0]+photo[1]+".jpg"
+		photo = photo.strip()
 	except:
 		continue
 
@@ -46,29 +47,29 @@ for tab in tabs:
 			continue
 
 		#Lines up each users information with the appropriate field
-		for em in email.next_siblings:
-			print(em.string)
-			try:
-				prev = em.next_sibling.string
-				print(prev, td[0].string, em.string)
-				stri = "\"" + em.string + "\""
-				if prev == "Contact" :
-					personal["email"] = stri
+		#for em in email.next_siblings:
+			#print(em.string)
+			#try:
+				#prev = em.next_sibling.string
+				#print(prev, td[0].string, em.string)
+				#stri = "\"" + em.string + "\""
+				#if prev == "Contact" :
+				#	personal["email"] = stri
 
-				if prev == "Education":
-					personal["education"] = stri
+				#if prev == "Education":
+				#	personal["education"] = stri
 
-				if prev == "Research":
-					personal["research"] = stri
+				#if prev == "Research":
+				#	personal["research"] = stri
 
-				if prev == "Experience":
-					personal["research_exp"] = stri
+				#if prev == "Experience":
+				#	personal["research_exp"] = stri
 
-				if prev == "Awards":
-					personal["awards"] = stri
-			except:
-				print("LOL", td[0].string, em.string)
-				pass
+				#if prev == "Awards":
+				#	personal["awards"] = stri
+			#except:
+			#	print("LOL", td[0].string, em.string)
+			#	pass
 
 	#Prints out the sql statement
 	if prin == True:
@@ -76,4 +77,4 @@ for tab in tabs:
 			Loc = td[2].string + " " + td[3].string
 		except:
 			Loc = "NULL"
-		#print("INSERT INTO `person`(`name`, `experience`, `power`, `email`, `department`, `location`, `years`, `mentor`, `photo`, `resum`, `Education`, `Research`, `Research_Experience`, `Awards`) VALUES(\"",td[0].string,"\",",exp,",0,", personal.get("email", "NULL"), ",", personal.get("department", "null"), ",\"", Loc, "\",\"", td[1].string, "\",", "NULL", ",\"", photo, "\",", "NULL", ",", personal.get("education", "NULL"), ",", personal.get("research", "NULL"), ",", personal.get("research_exp","NULL"), ",", personal.get("awards", "NULL"),"); \n")
+		print("INSERT INTO `person`(`name`, `experience`, `power`, `email`, `department`, `location`, `years`, `mentor`, `photo`, `resum`, `Education`, `Research`, `Research_Experience`, `Awards`) VALUES(\"",td[0].string,"\",",exp,",0,", personal.get("email", "NULL"), ",", personal.get("department", "null"), ",\"", Loc, "\",\"", td[1].string, "\",", "NULL", ",\"", photo, "\",", "NULL", ",", personal.get("education", "NULL"), ",", personal.get("research", "NULL"), ",", personal.get("research_exp","NULL"), ",", personal.get("awards", "NULL"),"); \n")

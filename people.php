@@ -44,7 +44,7 @@
 									<h4>
 										".$value."
 									</h4>");
-							echo("	<img src = images/".$row['photo']." class = 'featured-image'>
+							echo("	<img src = \"images/".trim($row['photo'])."\" class = 'featured-image'>
 									<p>".$row['department']."<br>".$row['Education']."<br>".$row['location']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>
 								</div>");
 							if($gradStud == 4)
