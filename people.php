@@ -59,19 +59,24 @@
 						echo("<table style='width:100%'>
 							<tr>
 								<th>Name</th>
-								<th>Department</th>
 								<th>Location</th>
 								<th>Years</th>
 								<th>Mentor</th>
 							</tr>");
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
-							$stmt1 = $pdo->prepare("SELECT * FROM person WHERE person_id = ".$row['mentor']);
-							$stmt1->execute();
-							$mentor = $stmt1->fetch(PDO::FETCH_ASSOC);
+							try
+							{
+								$stmt1 = $pdo->prepare("SELECT * FROM person WHERE person_id = ".$row['mentor']);
+								$stmt1->execute();
+								$mentor = $stmt1->fetch(PDO::FETCH_ASSOC);
+							}
+							catch(Exception $e)
+							{
+								$mentor['name'] = "";
+							}
 							echo("<tr>
 									<td>".$row['name']."</td>
-									<td>".$row['department']."</td>
 									<td>".$row['location']."</td>
 									<td>".$row['years']."</td>
 									<td>".$mentor['name']."</td>
