@@ -15,10 +15,11 @@
 			<div class="page-head" data-bg-image="images/page-head-2.jpg">
 				<div class="container">
 					<h2 class="page-title">Services</h2>
-					<small>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit consequuntur magni </small>
+					<small>Research in the Lahann Lab focuses on surface engineering, advanced polymers, biomimetic, materials, engineered microenvironments, and nano-scale self-assembly.</small>
 				</div>
 			</div>
 
+<!--
 			<main class="main-content">
 				<div class="fullwidth-block">
 					<div class="container">
@@ -39,13 +40,14 @@
 						</div>
 					</div>
 				</div>
+-->
 
 				<div class="fullwidth-block">
 					<div class="container">
-						<div class="boxed-icon">
-							<img src="images/icon-research.png" alt="" class="icon">
-							<h3>Research</h3>
-							<p>Laborum et dolorum fuga harum quidem rerum facilis expedita distinctio nam libero tempore perspiciatis unde omnis iste laudantium, totam rem aperiam inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+						<div class="boxed-icon research">
+							<img src="images/Jetting.jpg" alt="" class="icon research-image">
+							<h3 class = "research-title">Research</h3>
+							<p class = "research-description">Laborum et dolorum fuga harum quidem rerum facilis expedita distinctio nam libero tempore perspiciatis unde omnis iste laudantium, totam rem aperiam inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
 							<p>Nemo enim ipsam voluptatem sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro.</p>
 						</div>

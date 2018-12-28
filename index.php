@@ -44,34 +44,33 @@
 						<div class="row">
 							<div class="col-md-3 col-sm-6">
 								<div class="feature">
-									<img src="images/icon-research-small.png" alt="" class="feature-image">
+									<img src="images/Jetting.jpg" alt="" class="feature-image">
 									<h2 class="feature-title">Vapor-Based Reactive Polymeric Coatings</h2>
 									<p>This page describes Vapor-Based Reactive Polymeric Coatings</p>
-									<a href="" class="button">Learn more</a>
+									<a href="Electrohydrodynamic.php" class="button">Learn more</a>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="feature">
-									<img src="images/icon-medicine-small.png" alt="" class="feature-image">
+									<img src="images/Vapor.jpg" alt="" class="feature-image">
 									<h2 class="feature-title">Functional Molecule Synthesis</h2>
 									<p>This page describes Functional Molecule Synthesis</p>
-									<a href="" class="button">Learn more</a>
+									<a href="Vapor.php" class="button">Learn more</a>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="feature">
-									<img src="images/icon-genetics-small.png" alt="" class="feature-image">
+									<img src="images/Polymer.jpg" alt="" class="feature-image">
 									<h2 class="feature-title">Electro hydrodynamic Co-Jetting of Particles and Fibers</h2>
 									<p>This page describes ElectrohyElectrohydrodynamic Co-Jetting of particles and Fibers</p>
-									<a href="" class="button">Learn more</a>
+									<a href="Polymer.php" class="button">Learn more</a>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="feature">
-									<img src="images/icon-energy-small.png" alt="" class="feature-image">
+									<img src="images/Functional.png" alt="" class="feature-image">
 									<h2 class="feature-title">Polymer Brushes for Biomedical Applications</h2>
 									<p>This page describes Polymer Brushes for Biomedical Applications</p>
-									<a href="" class="button">Learn more</a>
 								</div>
 							</div>
 						</div> <!-- .row -->
