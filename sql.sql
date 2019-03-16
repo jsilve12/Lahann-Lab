@@ -2,8 +2,9 @@ CREATE TABLE person(
 	person_id smallint UNSIGNED not null auto_increment,
 	name varchar(32),
 	experience tinyint,
-	power tinyint,
+	`power` tinyint,
 	email varchar(64),
+	`password` varchar(128),
 	department varchar(512),
 	location varchar(256),
 	years varchar(128),
@@ -25,10 +26,21 @@ CREATE TABLE page(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE news(
-	news_id smallint UNSIGNED not null auto_increment,
-	title varchar(512),
+	pk integer auto increment not null,
+	title varchar(256),
+	dat date,
+	author varchar(64),
 	contents varchar(4096),
-	Primary Key(news_id)
+	PRIMARY KEY(pk)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE images(
+	pk integer auto_increment not null,
+	art integer,
+	name varchar(256),
+	PRIMARY KEY(pk),
+	CONSTRAINT FK FOREIGN KEY (art)
+	REFERENCES news(pk)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE papers(

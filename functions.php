@@ -2,7 +2,7 @@
 	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=Lahann','Jonathan', 'Hatter12');
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-	class level
+	class levels
 	{
 		const __default = self::underGrad;
 
@@ -58,15 +58,25 @@
 	}
 
 	$types = array(
-		level::professor => "Principal Investigator",
-		level::postDoc => "Post Docs" ,
-		level::gradStudents => "Ph.D Students",
-		level::visiting => "Visiting Students",
-		level::underGrad => "Undergraduate Students",
-		level::alumPostDoc => "Alumni Post Docs",
-		level::alumPhD => "Alumni Ph.D Students",
-		level::alumMasters => "Alumni Masters",
-		level::alumVisiting => "Visiting Students Alumni",
-		level::alumUnderGrad => "Alumni Undergrads"
-	)
+		levels::professor => "Principal Investigator",
+		levels::postDoc => "Post Docs" ,
+		levels::gradStudents => "Ph.D Students",
+		levels::visiting => "Visiting Students",
+		levels::underGrad => "Undergraduate Students",
+		levels::alumPostDoc => "Alumni Post Docs",
+		levels::alumPhD => "Alumni Ph.D Students",
+		levels::alumMasters => "Alumni Masters",
+		levels::alumVisiting => "Visiting Students Alumni",
+		levels::alumUnderGrad => "Alumni Undergrads"
+	);
+
+	# Checks if you are logged in
+	function loggedIn($arr)
+	{
+		if(isset($_SESSION['username']))
+		{
+			return 1;
+		}
+		return 2;
+	}
 ?>

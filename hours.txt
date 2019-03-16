@@ -1,4 +1,4 @@
-Estimated before this: 4 hours
+11/2/18: 1.25 Hours (Meeting)
 11/20/18: functions/people: 1.25 hour
 12/6/18: functions/people and about and person: 1.66
 12/10/18: .5 (people)
@@ -7,8 +7,59 @@ Estimated before this: 4 hours
 12/24/18: 4.5 (people)
 12/25/18: 2.66 (people and about)
 12/27/18: 1.83 (about)
-Total: 18.66
+12/28/18: 1.33 (Papers/Scripts)
+1/14/19: .5 Meeting
+1/23/19 (Moved to february): .5 Person Page
+1/26/19 (Moved to february): .5 Person Page
+1/27/19: .5 Person and Scraping Page
+1/28/19: .666 Scraping
+1/31/19: .5 Updating
+2/1/19: .5 Scraping (I think WOS is the solution)
+2/2/19: .5 Updating
+2/3/19: .5 Updating
+2/4/19: .5 Scraping and News
+2/5/19: .5 News
+2/6/19: .5 News
+2/25/19: 30 Minutes
+3/3/19: 1.5 Hours
+3/4/19: 1 Hour
+3/5/19: 1 Hour
+3/6/19: 1 Hour
+3/10/19: 1 Hour
+3/11/19: 2 Hours
+3/12/19: 2 Hours
+3/13/19: 2 Hours
+3/14/19: 2 Hours
+3/15/19: 65 Minutes
+
+Total: 20
 
 MacroMolecular website:
 Estimated Before this: 1 hour
 12/20/18: 1.33
+12/29/18: 1.5
+12/30/18: 55 Minutes
+1/7/19: 1 Hour
+1/9/19: 1 Hour
+1/11/19: 40 Minutes
+1/15/19: 30 Minutes
+1/22/19: 30 Minutes
+Lost most of the beginning of february to a save issue (the time information, not the work)
+2/13/19: 30 Minutes
+2/16/19: 35 Minutes
+2/19/19: 30 Minutes
+2/22/19: 30 Minutes
+
+People pages
+	Link to people in the people's name
+Home page
+	Change the images that are scrolled through
+	Michigan Logo instead of Science Beaker
+About for the Lab
+	Make the boxes more symmetrical
+	That information is going to have to be updated
+Ranganathan at UC BMB
+
+
+More Michigan M, and also change the boxes on the front page to be size consistent
+Insert Michael into the db

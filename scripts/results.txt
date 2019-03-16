@@ -1,2 +1,9 @@
-INSERT INTO `person`(`name`, `experience`, `power`, `email`, `department`, `location`, `years`, `mentor`, `photo`, `resum`, `Education`, `Research`, `Research_Experience`, `Awards`) VALUES("Xiaopei
-  Deng",9,0,NULL,NULL,"Magic Leap Sr. Research Scientist","2007-2013",NULL,"XiaopeiDeng.jpg",NULL,NULL,NULL,NULL,NULL); 
+python3 Papers.py -c 100 --author 'Joerg Lahann' --after 0
+python3 Papers.py -c 100 --author 'Stephanie Christau' --after 0
+python3 Papers.py -c 100 --author 'Ramya Kumar' --after 0
+python3 Papers.py -c 100 --author 'Jason Gregory' --after 0
+python3 Papers.py -c 100 --author 'Nahal Habibi' --after 0
+python3 Papers.py -c 100 --author 'Dylan Neale' --after 0
+python3 Papers.py -c 100 --author 'Daniel Quevedo' --after 0
+python3 Papers.py -c 100 --author 'Ayse Muniz' --after 0
+python3 Papers.py -c 100 --author 'Jonathan Gerszberg' --after 0
