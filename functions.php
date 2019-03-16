@@ -69,6 +69,8 @@
 		levels::alumVisiting => "Visiting Students Alumni",
 		levels::alumUnderGrad => "Alumni Undergrads"
 	);
+	$type = array("Undergraduate", "Visiting Scholar", "Graduate", "Post Doc", "Professor", "Alumni Undergraduate", "Alumni Visiting Scholar", "Alumni Masters", "Alumni Ph.D.", "Alumni Post Doc");
+
 
 	# Checks if you are logged in
 	function loggedIn($arr)
