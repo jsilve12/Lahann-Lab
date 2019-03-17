@@ -142,42 +142,6 @@
     </div>
   </div>
 
-  <script>
-    function editFunc(key, numb)
-    {
-      if(document.getElementById(key).contentEditable === "true")
-      {
-        console.log("Sending");
-        url = "update.php?k=";
-
-        //Add the get parameters
-        url = url.concat(key);
-        url = url.concat("&v=");
-        url = url.concat(document.getElementById(key).innerHTML);
-        url = url.concat("&pk=");
-        url = url.concat(numb);
-        console.log(url);
-
-        //Actually interact with JSON
-    	fetch(url)
-    	  .then((response) =>{
-            if (!response.ok) throw Error(response.statusText);
-            console.log(response);
-            return response.json();
-          })
-          .then((data) => {
-            console.log(data);
-          })
-        document.getElementById(key).contentEditable = false;
-      }
-      else
-      {
-        console.log("Editing");
-        document.getElementById(key).contentEditable = true;
-      }
-    }
-  </script>
-
 </body>
 
 </html>
