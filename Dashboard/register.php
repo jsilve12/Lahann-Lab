@@ -6,29 +6,28 @@
   if(loggedIn($_SESSION) == 1)
   {
     # Must have atleast an admin level of authorization
-    if($_SERVER["REQUEST_METHOD"] == "POST" && $_SESSION['authorization'] > 1)
+    if($_SERVER["REQUEST_METHOD"] === "POST" && $_SESSION['authorization'] > 1)
     {
-
       # Deals with the password
       $pass = password_hash($_POST['password1'], PASSWORD_DEFAULT);
 
       $ins = $pdo->prepare("Insert Into
-              person(name, experience, `power`, email, password, department, location, years, mentor, photo)
-              values(:name, :experience, :power, :email, :password, :department, :location, :years, :mentor, :photo)");
+              person(name, experience, `power`, email, password, department, location, years, mentor)
+              values(:name, :experience, :power, :email, :password, :department, :location, :years, :mentor)");
       $ins->execute(array(
-        ":name" => $_POST['name'],
-        ":experience" => $_POST['experience'],
-        ":power" => $_POST['power'],
-        ":email" => $_POST['email'],
-        ":password" => $pass,
-        ":department" => $_POST['department'],
-        ":location" => $_POST['location'],
-        ":years" => $_POST['years'],
-        ":mentor" => $_POST['mentor']
+        "name" => $_POST['name'],
+        "email" => $_POST['email'],
+        "password" => $pass,
+        "power" => $_POST['power'],
+        "experience" => $_POST['experience'],
+        "department" => $_POST['department'],
+        "location" => $_POST['location'],
+        "years" => $_POST['years'],
+        "mentor" => $_POST['mentor']
       ));
 
       # Uploads the image
-      $id = $ins->lastInsertId();
+      $id = $pdo->lastInsertId();
       imgSave($id, $pdo);
     }
   }
@@ -64,22 +63,22 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form>
+        <form method = "POST" name = "Form" id = "Form" enctype="multipart/form-data">
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+              <input type="text" name="name" id="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
               <label for="name">Name</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="email" class="form-control" placeholder="Email address" required="required">
+              <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required="required">
               <label for="email">Email address</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="password1" class="form-control" placeholder="password" required="required">
+              <input type="password" name="password1" id="password1" class="form-control" placeholder="password" required="required">
               <label for="password1">Password</label>
             </div>
           </div>
@@ -92,7 +91,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <select id="power" class="form-control" required="required">
+                  <select name="experience" id="power" class="form-control" required="required">
                     <option value = 9>Alumni Post Doc</option>
                     <option value = 8>Alumni Ph.D.</option>
                     <option value = 7>Alumni Masters</option>
@@ -117,7 +116,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <select id="power" class="form-control" required="required">
+                  <select name="power" id="power" class="form-control" required="required">
                     <option>3</option>
                     <option>2</option>
                     <option>1</option>
@@ -129,31 +128,31 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="department" class="form-control" placeholder="Department" required="required">
+              <input type="text" name="department" id="department" class="form-control" placeholder="Department">
               <label for="department">Department</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="location" class="form-control" placeholder="Location" required="required">
+              <input type="text" name="location" id="location" class="form-control" placeholder="Location">
               <label for="location">Location</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="years" class="form-control" placeholder="Years" required="required">
+              <input type="text" name="years" id="years" class="form-control" placeholder="Years">
               <label for="years">Years</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="mentor" class="form-control" placeholder="Mentor" required="required">
+              <input type="text" name="mentor" id="mentor" class="form-control" placeholder="Mentor">
               <label for="mentor">Mentor</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" id="picture" class="form-control" placeholder="Picture" required="required">
+              <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" placeholder="Picture" required="required">
               <label for="picture">Picture</label>
             </div>
           </div>
@@ -164,8 +163,8 @@
           </div>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Login Page</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <a class="d-block small mt-3" href="login.php">Login Page</a>
+          <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
         </div>
       </div>
     </div>
