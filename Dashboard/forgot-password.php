@@ -20,6 +20,48 @@
 </head>
 
 <body class="bg-dark">
+  <?php
+    $pass = "";
+    session_start();
+    include("../functions.php");
+    if(loggedIn($_SESSION) == 2)
+    {
+      header("Location: login.php");
+      exit();
+    }
+
+    # If the password is to be updated
+    if($_SERVER["REQUEST_METHOD"] === "POST")
+    {
+      # Makes sure the passwords are the same
+      if($_POST['Password'] === $_POST['Confirm_Password'])
+      {
+        # Make sure no one tries to change someone elses password
+        $per = $pdo->prepare("Select person_id from person where email = :email");
+        $per->execute(array(
+          "email" => $_POST['email']
+        ));
+        $perEmail = $per->fetch()['person_id'];
+        if($perEmail !== $_SESSION['username'])
+        {
+          header("Location: forgot-password.php");
+          exit();
+        }
+
+        # Update the password
+        $upd = $pdo->prepare("Update person set password = :pass where person_id = :person");
+        $upd->execute(array(
+          "pass" => password_hash($_POST['Password'], PASSWORD_DEFAULT),
+          "person" => $_SESSION['username']
+        ));
+        $pass = "Password Reset";
+      }
+      else
+      {
+        $pass = "The passwords are different: They were not reset";
+      }
+    }
+  ?>
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">
@@ -29,11 +71,11 @@
           <h4>Forgot your password?</h4>
           <p>Enter your email address and we will send you instructions on how to reset your password.</p>
         </div>
-        <form>
+        <form method = "POST">
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
-              <label for="inputEmail">Enter email address</label>
+              <input type="text" name="email" id="email" class="form-control" placeholder="Email Address" required="required" autofocus="autofocus">
+              <label for="inputEmail">Email Address</label>
             </div>
           </div>
           <div class="form-group">
@@ -48,7 +90,11 @@
               <label for="Confirm Password">Confirm Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">Reset Password</a>
+          <div class="form-group">
+            <div>
+              <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block" required="required" autofocus="autofocus">
+            </div>
+          </div>
         </form>
         <div class="text-center">
           <a class="d-block small" href="login.php">Login Page</a>
