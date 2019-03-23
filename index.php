@@ -76,38 +76,50 @@
 						</div> <!-- .row -->
 					</div> <!-- .container -->
 				</div> <!-- .fullwidth-block -->
+				<?php
+					include("functions.php");
 
-				<div class="fullwidth-block" data-bg-color="#edf2f4">
-					<div class="container">
-						<h2 class="section-title">Latest News</h2>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="post">
-									<figure class="featured-image"><img src="images/News-1.jpg" alt=""></figure>
-									<h2 class="entry-title"><a href="">Kevin is Leaving</a></h2>
-									<small class="date">2 oct 2014</small>
-									<p>Congratulations to Kevin, who was with us as a Graduate Student and Post Doc on a job at IBM...</p>
-								</div>
+					# Deals with the news
+					$news = $pdo->prepare("Select pk, title, dat, contents from news order by pk asc limit 3");
+					$news->execute();
+					$news = $news->fetchall();
+					echo('<div class="fullwidth-block" data-bg-color="#edf2f4">
+								<div class="container">
+									<h2 class="section-title">Latest News</h2>
+									<div class="row">');
+
+					# Iterates over the image
+					foreach($news as $new)
+					{
+						echo('<div class="col-md-4">
+								<div class="post">');
+
+						# Gets the image
+						$img = $pdo->prepare("Select name from images where art = :art");
+						$img->execute(array(
+							"art" => $new["pk"]
+						));
+						$img = $img->fetchall();
+
+						# Prints the image
+						if(sizeof($img) >= 1)
+						{
+							echo('<figure class="featured-image"><img src="'.$img[0]["name"].'" alt=""></figure>');
+						}
+
+						# The Rest of the information
+						echo('<h2 class="entry-title"><a href="article.php?article='.$new["pk"].'">'.$new["title"].'</a></h2>
+								<small class="date">'.$new["dat"].'</small>
+								<p>'.substr($new["contents"], 0, 128).'...</p>
 							</div>
-							<div class="col-md-4">
-								<div class="post">
-									<figure class="featured-image"><img src="images/News-2.png" alt=""></figure>
-									<h2 class="entry-title"><a href="">Ramya Has successfully defended her thesis!</a></h2>
-									<small class="date">2 oct 2014</small>
-									<p>The entire lab extends their congratulations to the newly minted Dr. Kumar, after many years of work...</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="post">
-									<figure class="featured-image"><img src="images/News-3.jpg" alt=""></figure>
-									<h2 class="entry-title"><a href="">LLahann Lab helps organize Biomaterials Day</a></h2>
-									<small class="date">2 oct 2014</small>
-									<p>Many months of hard work paid off today after a very successful Michigan Biomaterials day...</p>
-								</div>
-							</div>
-						</div> <!-- .row -->
+						</div>');
+					}
+
+					# End of News
+					echo('</div> <!-- .row -->
 					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
+				</div>');
+				?>
 
 				<div class="fullwidth-block">
 					<div class="container">
