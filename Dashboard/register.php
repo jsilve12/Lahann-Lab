@@ -3,10 +3,10 @@
   # You can only create an account, if you are logged in
   session_start();
   include("../functions.php");
-  if(loggedIn($_SESSION) == 1)
+  if(loggedIn($_SESSION) == 1 && $_SESSION['authorization'] > 1)
   {
     # Must have atleast an admin level of authorization
-    if($_SERVER["REQUEST_METHOD"] === "POST" && $_SESSION['authorization'] > 1)
+    if($_SERVER["REQUEST_METHOD"] === "POST")
     {
       # Deals with the password
       $pass = password_hash($_POST['password1'], PASSWORD_DEFAULT);
@@ -33,7 +33,7 @@
   }
   else
   {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
   }
 ?>

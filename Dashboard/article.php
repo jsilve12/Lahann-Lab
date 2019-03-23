@@ -37,6 +37,8 @@
       header("Location: index.php");
       exit();
     }
+    # Inserts the article
+    if($_SERVER["REQUEST_METHOD"] === "POST")
   ?>
   <div class="container">
     <div class="card card-register mx-auto mt-5">
@@ -57,13 +59,37 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
+              <input type="text" name="author" id="author" class="form-control" placeholder="author" required="required" autofocus="autofocus">
+              <label for="author">Date</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
               <input type="text" name="Contents" id="Contents" class="form-control" placeholder="Contents" required="required" autofocus="autofocus">
               <label for="Contents">Contents</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" placeholder="Picture">
+              <input type="file" name="fileToUpload1" id="fileToUpload" class="form-control" placeholder="Picture">
+              <label for="picture">Picture</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="file" name="fileToUpload2" id="fileToUpload" class="form-control" placeholder="Picture">
+              <label for="picture">Picture</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="file" name="fileToUpload3" id="fileToUpload" class="form-control" placeholder="Picture">
+              <label for="picture">Picture</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="file" name="fileToUpload4" id="fileToUpload" class="form-control" placeholder="Picture">
               <label for="picture">Picture</label>
             </div>
           </div>
