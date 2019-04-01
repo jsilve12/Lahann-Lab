@@ -1,3 +1,40 @@
+<?php
+  $pass = "";
+  session_start();
+  include("../functions.php");
+
+  # If the password is to be updated
+  if($_SERVER["REQUEST_METHOD"] === "POST")
+  {
+    # Makes sure the passwords are the same
+    if($_POST['Password'] === $_POST['Confirm_Password'])
+    {
+      # Make sure no one tries to change someone elses password
+      $per = $pdo->prepare("Select person_id from person where email = :email");
+      $per->execute(array(
+        "email" => $_POST['email']
+      ));
+      $perEmail = $per->fetch()['person_id'];
+      if($perEmail !== $_SESSION['username'])
+      {
+        header("Location: forgot-password.php");
+        exit();
+      }
+
+      # Update the password
+      $upd = $pdo->prepare("Update person set password = :pass where person_id = :person");
+      $upd->execute(array(
+        "pass" => password_hash($_POST['Password'], PASSWORD_DEFAULT),
+        "person" => $_SESSION['username']
+      ));
+      $pass = "Password Reset";
+    }
+    else
+    {
+      $pass = "The passwords are different: They were not reset";
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,49 +57,6 @@
 </head>
 
 <body class="bg-dark">
-  <?php
-    $pass = "";
-    session_start();
-    include("../functions.php");
-    if(loggedIn($_SESSION) == 2)
-    {
-      header("Location: login.php");
-      exit();
-    }
-
-    # If the password is to be updated
-    if($_SERVER["REQUEST_METHOD"] === "POST")
-    {
-      # Makes sure the passwords are the same
-      if($_POST['Password'] === $_POST['Confirm_Password'])
-      {
-        # Make sure no one tries to change someone elses password
-        $per = $pdo->prepare("Select person_id from person where email = :email");
-        $per->execute(array(
-          "email" => $_POST['email']
-        ));
-        $perEmail = $per->fetch()['person_id'];
-        if($perEmail !== $_SESSION['username'])
-        {
-          header("Location: forgot-password.php");
-          exit();
-        }
-
-        # Update the password
-        $upd = $pdo->prepare("Update person set password = :pass where person_id = :person");
-        $upd->execute(array(
-          "pass" => password_hash($_POST['Password'], PASSWORD_DEFAULT),
-          "person" => $_SESSION['username']
-        ));
-        $pass = "Password Reset";
-      }
-      else
-      {
-        $pass = "The passwords are different: They were not reset";
-      }
-    }
-  ?>
-
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Reset Password</div>

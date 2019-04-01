@@ -39,6 +39,9 @@
     }
     # Inserts the article
     if($_SERVER["REQUEST_METHOD"] === "POST")
+    {
+
+    }
   ?>
   <div class="container">
     <div class="card card-register mx-auto mt-5">
@@ -60,7 +63,7 @@
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" name="author" id="author" class="form-control" placeholder="author" required="required" autofocus="autofocus">
-              <label for="author">Date</label>
+              <label for="author">Author</label>
             </div>
           </div>
           <div class="form-group">
