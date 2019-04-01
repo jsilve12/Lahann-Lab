@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <script src="functions.js"></script>
 
     <a class="navbar-brand mr-1" href="index.php">Lahann Lab Dashboard</a>
 

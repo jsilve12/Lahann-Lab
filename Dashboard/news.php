@@ -79,13 +79,39 @@ if($_SESSION['authorization'] < 2)
                     $news = $news->fetchall();
                     foreach($news as $user)
                     {
+                      # Gets all the images
+                      $img = $pdo->prepare("Select name from images where art = :a");
+                      $img->execute(array(
+                        "a" => $user['pk']
+                      ));
+                      $img = $img->fetchall();
+
+                      # Echos each row
                       echo(" <tr>
                                 <td>".$user['pk']."</td>
                                 <td id = '".$user['pk']."title'>".$user['title']."</td>
                                 <td id = '".$user['pk']."author'>".$user['author']."</td>
                                 <td id = '".$user['pk']."contents'>".$user['contents']."</td>
-                                <td id = '".$user['pk']."images'></td>
-                                <td><button id = 'submit' value = '".$user['pk']."' onclick = bigEditFunc(".$user['pk'].")>Edit</button></td>
+                                <td id = '".$user['pk']."images'>");
+                      # Displays the image
+                      foreach($img as $val)
+                      {
+                        echo("<img style='width:80%;margin:10%;' src=../".$val["name"].">");
+                        echo("<button style='width:100%;margin-bottom:2%'>-</button>");
+                      }
+                      # Allows a new image to be uploaded
+                      echo("
+                        <div class='col-xl-3 col-sm-6 mb-3'>
+                          <form action='imgupdate.php?type=2&key=".$user['pk']."' method='post' enctype='multipart/form-data'>
+                            Upload a new image (Note: to view the new image, refresh)
+                            </br>
+                            <input type='file' name='fileToUpload' id='fileToUpload'>
+                            <input type='hidden' name='person_id' id='person_id' value='".$_SESSION['username']."'>
+                            <input type='submit' value='Upload Image' name='submit'>
+                          </form>
+                        </div>");
+                      echo("</td>
+                                <td><button id = 'submit' value = '".$user['pk']."' onclick = newsEditFunc(".$user['pk'].")>Edit</button></td>
                               </tr>");
                     }
                   ?>

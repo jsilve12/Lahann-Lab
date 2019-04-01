@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+	<?php include("generic/header.html"); ?>
 	<?php
 		include("head.html");
 	?>
 	<body>
 		<div class="site-content">
-			<?php include("generic/header.html"); ?>
 			<div class="hero">
 				<ul class="slides">
 					<li data-bg-image="images/slider-2.png">

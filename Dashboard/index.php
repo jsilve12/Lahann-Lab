@@ -70,7 +70,7 @@
                           $key.": <img id = '".$key."' src = '../images/".$value."'/>
                         </div>
                         <div class='col-xl-3 col-sm-6 mb-3'>
-                          <form action='imgupdate.php' method='post' enctype='multipart/form-data'>
+                          <form action='imgupdate.php?type=1' method='post' enctype='multipart/form-data'>
                             Upload a new image (Note: to view the new image, refresh)
                             </br>
                             <input type='file' name='fileToUpload' id='fileToUpload'>
@@ -102,15 +102,6 @@
         </div>
       </div>
       <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Lahann Lab</span>
-          </div>
-        </div>
-      </footer>
 
     </div>
     <!-- /.content-wrapper -->
