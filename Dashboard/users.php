@@ -1,3 +1,18 @@
+<?php
+  session_start();
+  include("head.php");
+  include("../functions.php");
+  if(loggedIn($_SESSION) == 2)
+  {
+    header("Location: login.php");
+    exit();
+  }
+  if($_SESSION['authorization'] < 2)
+  {
+    header("Location: index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,21 +38,6 @@
 </head>
 
 <body id="page-top">
-    <?php
-      session_start();
-      include("head.php");
-      include("../functions.php");
-      if(loggedIn($_SESSION) == 2)
-      {
-        header("Location: login.php");
-        exit();
-      }
-      if($_SESSION['authorization'] < 2)
-      {
-        header("Location: index.php");
-        exit();
-      }
-    ?>
     <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">

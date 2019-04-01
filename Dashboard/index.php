@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
   session_start();
   include("../functions.php");
@@ -8,6 +7,7 @@
     exit();
   }
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

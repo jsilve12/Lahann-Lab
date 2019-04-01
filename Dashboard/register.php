@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
   # You can only create an account, if you are logged in
   session_start();
@@ -37,6 +36,7 @@
     exit();
   }
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
