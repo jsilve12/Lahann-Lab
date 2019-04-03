@@ -116,3 +116,20 @@ function newsEditFunc(personId)
 		document.getElementById(personId.toString().concat("contents")).contentEditable = true;
 	}
 }
+
+// Removes an image from the news
+function imgDelete(key)
+{
+	console.log("imgDelete Called");
+	url = "delete.php?key=" + key.toString();
+	//Actually interact with JSON
+	fetch(url)
+	  .then((response) =>{
+		if (!response.ok) throw Error(response.statusText);
+		console.log(response);
+		return response.json();
+	  })
+	  .then((data) => {
+		console.log(data);
+	  })
+}

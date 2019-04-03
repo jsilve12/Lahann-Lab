@@ -80,7 +80,7 @@ if($_SESSION['authorization'] < 2)
                     foreach($news as $user)
                     {
                       # Gets all the images
-                      $img = $pdo->prepare("Select name from images where art = :a");
+                      $img = $pdo->prepare("Select * from images where art = :a");
                       $img->execute(array(
                         "a" => $user['pk']
                       ));
@@ -97,7 +97,7 @@ if($_SESSION['authorization'] < 2)
                       foreach($img as $val)
                       {
                         echo("<img style='width:80%;margin:10%;' src=../".$val["name"].">");
-                        echo("<button style='width:100%;margin-bottom:2%'>-</button>");
+                        echo("<button style='width:100%;margin-bottom:2%' onclick=imgDelete(".$val['pk'].")>-</button>");
                       }
                       # Allows a new image to be uploaded
                       echo("
