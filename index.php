@@ -80,7 +80,7 @@
 					include("functions.php");
 
 					# Deals with the news
-					$news = $pdo->prepare("Select pk, title, dat, contents from news order by pk asc limit 3");
+					$news = $pdo->prepare("Select pk, title, dat, contents from news order by pk desc limit 3");
 					$news->execute();
 					$news = $news->fetchall();
 					echo('<div class="fullwidth-block" data-bg-color="#edf2f4">

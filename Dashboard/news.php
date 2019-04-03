@@ -74,7 +74,7 @@ if($_SESSION['authorization'] < 2)
                       return (isset($arr[$ind]) ? ($arr[$ind] == $val)? "selected": "" : "");
                     }
 
-                    $news = $pdo->prepare("Select pk, title, author, contents from news order by pk");
+                    $news = $pdo->prepare("Select * from news order by pk desc");
                     $news->execute();
                     $news = $news->fetchall();
                     foreach($news as $user)

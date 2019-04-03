@@ -14,6 +14,7 @@
 		$news = $pdo->prepare("Update news set ".$_GET['k']." = :v Where pk = :pk");
 		$news->execute(array("v" => $_GET['v'], "pk" => $_GET['pk']));
 	}
-
+	var_dump($_GET);
+	echo($_GET['v']);
 	echo('{ "key": "'.$_GET['k'].'", "value": "'.$_GET['v'].'", "key": "'.$_GET['pk'].'" }');
 ?>

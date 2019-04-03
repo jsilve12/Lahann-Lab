@@ -1,0 +1,350 @@
+
+Create Table news(
+	pk integer auto_increment not null,
+	title varchar(256),
+	dat varchar(32),
+	author varchar(64),
+	contents varchar(4096),
+	primary key (pk)
+) engine = innoDB;
+Create Table images(
+	pk integer auto_increment not null,
+	art integer,
+	name varchar(256),
+	primary key(pk),
+	constraint fk_article
+		foreign key (art)
+		references news(pk)
+) engine = innoDB;
+
+Insert Into news(title, dat, author, contents) values("Sampa and Srijanani's Paper is Published in Angewandte Chemie Int. Ed.","Nov 16, 2015, 2:35 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(1,"images/74590328.png");
+Insert Into news(title, dat, author, contents) values("Aftin's Paper is Published in Small","Nov 16, 2015, 9:06 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(2,"images/68416442.jpg");
+Insert Into news(title, dat, author, contents) values("We've Moved! Here is our group in our new home at NCRC:","Nov 16, 2015, 9:09 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(3,"images/4571355.png");
+Insert Into news(title, dat, author, contents) values("Aftin receives both the Marian Sarah Parker Prize-Graduate and the Richard and Eleanor Towner Prize for Distinguished Academic Achievement in Biomedical Engineering.","Nov 16, 2015, 9:10 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Aftin has received the Rackham Predoctoral Fellowship.","Nov 16, 2015, 9:10 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Sam and Caci have received Undergraduate Summer Fellowships.","Nov 16, 2015, 9:11 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Aftin has been selected as a Whitaker International Scholar","Nov 16, 2015, 9:11 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Xiaopei and Tom's Paper is Published in Macromolecular Rapid Communication","Nov 16, 2015, 9:12 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(8,"images/41671499.png");
+Insert Into news(title, dat, author, contents) values("Professor Lahann is Appointed as the Director of the Biointerfaces Institute","Nov 16, 2015, 9:12 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Asish's Paper is Published in Advanced Materials","Nov 16, 2015, 9:13 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(10,"images/96204434.jpg");
+Insert Into news(title, dat, author, contents) values("Dr. Lahann is Promoted to Full Professorship","Nov 16, 2015, 9:13 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Aftin's Paper is Published in Polymer","Nov 16, 2015, 9:14 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(12,"images/61317569.gif");
+Insert Into news(title, dat, author, contents) values("Dr. Lahann's Paper is Published in Advanced Materials","Nov 16, 2015, 9:15 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Weipeng and Kyung Jin's Paper is Published in Small","Nov 16, 2015, 9:15 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(14,"images/86102639.jpg");
+Insert Into news(title, dat, author, contents) values("Jaewon and Kyung Jin's Paper is Published in the Proceedings of the National Academy of Science (PNAS)","Nov 16, 2015, 9:16 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(15,"images/51483023.jpg");
+Insert Into news(title, dat, author, contents) values("Tae-Hong and Dr. Lahann's Chapter is Published in the Book \"Janus Particle Synthesis, Self-Assembly, and Applications\"","Nov 16, 2015, 9:16 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(16,"images/97216931.png");
+Insert Into news(title, dat, author, contents) values("Aftin has defended her thesis!","Nov 16, 2015, 9:17 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(17,"images/48323219.png");
+Insert Into news(title, dat, author, contents) values("Xiaopei has won the Charles G. Overberger Award","Nov 16, 2015, 9:18 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(18,"images/19948567.jpg");
+Insert Into news(title, dat, author, contents) values("Jaewon has won the Best Poster Award at the Macro Symposium","Nov 16, 2015, 9:18 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Tom has won an award at the Engineering Graduate Symposium","Nov 16, 2015, 9:18 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Xioapei's Paper is Published in Nature Materials","Nov 16, 2015, 9:19 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(21,"images/3794266.jpg");
+Insert Into news(title, dat, author, contents) values("Sahar has won the Distinguished Leadership Award","Nov 16, 2015, 9:19 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Jaewon has won the Richard F. and Eleanor A. Towner Prize for Distinguished Academic Achievement Award","Nov 16, 2015, 9:19 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Jaewon has successfully defended her thesis! Congratulations Dr. Yoon!","Nov 16, 2015, 9:20 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(24,"images/34678233.png");
+Insert Into news(title, dat, author, contents) values("Aftin's Paper is Published in Journal of Polymer Science Part B: Polymer Physics","Nov 16, 2015, 9:21 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(25,"images/64201624.png");
+Insert Into news(title, dat, author, contents) values("Xiaopei has successfully defended her thesis! Congratulations Dr. Deng!","Nov 16, 2015, 9:22 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(26,"images/32683825.png");
+Insert Into news(title, dat, author, contents) values("Tae-Hong and Tom's Paper is Published in Small","Nov 16, 2015, 9:23 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(27,"images/54860142.jpg");
+Insert Into news(title, dat, author, contents) values("Florence and Kenneth's Paper is Published in ACS Applied Materials &Interfaces","Nov 16, 2015, 9:23 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(28,"images/56743969.gif");
+Insert Into news(title, dat, author, contents) values("Tom has successfully defended his thesis! Congratulations Dr. Eyster!","Nov 16, 2015, 9:24 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(29,"images/80623533.jpg");
+Insert Into news(title, dat, author, contents) values("Sahar and Tae-Hong's Paper is Published in Journal of Controlled Release","Nov 16, 2015, 9:24 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(30,"images/53129923.jpg");
+Insert Into news(title, dat, author, contents) values("Jake has received the MBSTP Fellowship!","Nov 16, 2015, 9:25 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Sahar's Paper is Published in Angewandte Chemie Int. Ed.","Nov 16, 2015, 9:25 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(32,"images/74586503.jpg");
+Insert Into news(title, dat, author, contents) values("Tae-Hong's Paper is Published in Advanced Materials","Nov 16, 2015, 9:26 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(33,"images/44559375.jpg");
+Insert Into news(title, dat, author, contents) values("Prof. Lahann's Review Paper is Published in MRS Bulletin","Nov 16, 2015, 9:26 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(34,"images/65952730.png");
+Insert Into news(title, dat, author, contents) values("Nathan has received the NSERC PGS-D Fellowship!","Nov 16, 2015, 9:27 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("The Lahann Lab Is Certified as a Sustainable Lab!","Nov 16, 2015, 9:27 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(36,"images/81050797.png");
+Insert Into news(title, dat, author, contents) values("Congratulations to our Undergraduate Students for Receiving Summer Fellowships!","Nov 16, 2015, 9:28 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Asish has successfully defended his thesis! Congratulations Dr. Misra!","Nov 16, 2015, 9:29 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(38,"images/73150297.png");
+Insert Into news(title, dat, author, contents) values("Clark's Video on Designing Scaffolds for Tissue Engineering","Nov 16, 2015, 9:30 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Congratulations to Ramya and Sahar for Receiving Poster Prizes!","Nov 16, 2015, 9:31 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Ramya's Paper is Published in Biomaterials","Nov 16, 2015, 9:31 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(41,"images/68175963.jpg");
+Insert Into news(title, dat, author, contents) values("Aftin and Hakan's Paper is Published in Langmuir","Nov 16, 2015, 9:32 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(42,"images/38560518.gif");
+Insert Into news(title, dat, author, contents) values("Jaewon and Tom's Paper is Published in Advanced Materials","Nov 16, 2015, 9:33 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Katya, Sahar and Asish's Paper is Published inACS Applied Materials & Interfaces","Nov 16, 2015, 9:33 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(44,"images/68612489.gif");
+Insert Into news(title, dat, author, contents) values("Sahar has successfully defended her thesis! Congratulations Dr. Rahmani!","Nov 16, 2015, 9:34 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(45,"images/53351738.jpg");
+Insert Into news(title, dat, author, contents) values("Asish's Paper is Published in Biomacromolecules","Nov 16, 2015, 9:34 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(46,"images/59560243.gif");
+Insert Into news(title, dat, author, contents) values("Aftin's Paper is Published in Annual Review of Chemical and Biomolecular Engineering","Nov 16, 2015, 9:35 PM","by Jacob Jordahl","");
+Insert Into news(title, dat, author, contents) values("Sahar's Paper is Published in Journal of Drug Targeting","Nov 16, 2015, 9:36 PM","by Jacob Jordahl","<span style=\"color:rgb(51,51,51);font-family:calibri,arial,sans-serif;line-height:16.96px\">Sahar Rahmani, Carlos H. Villa, Acacia F. Dishman, Marika E. Grabowski, Daniel C. Pan, Hakan Durmaz, Asish C. Misra, Laura Colon-Melendez, Michael J. Solomon, Vladimir R. Muzykantov and Joerg Lahann, \"<a href=\"http://www.tandfonline.com/doi/full/10.3109/1061186X.2015.1076428\">Long-circulating Janus nanoparticles made by electrohydrodynamic co-jetting for systemic drug delivery applications</a>\", </span>
+<em style=\"color:rgb(51,51,51);font-family:calibri,arial,sans-serif;line-height:16.96px\">J Drug Target</em>
+<span style=\"color:rgb(51,51,51);font-family:calibri,arial,sans-serif;line-height:16.96px\">, (2015).</span>
+");
+Insert Into news(title, dat, author, contents) values("Jake's paper with Kim Lab published in Chemical Science","Jan 6, 2016, 11:24 AM","by Jacob Jordahl","M. S. Kwon, J. H. Jordahl, A. W. Phillips, K. Chung, S. Lee, J. Giershner, J. Lahann, J. Kim, 
+<a href=\"http://pubs.rsc.org/en/content/articlelanding/2016/sc/c5sc03986j#!divAbstract\">\"Multi-luminescent switching of Metal-Free Organic Phosphors for Luminometric Detection of Organic Solvents\"</a>
+, Chemical Science, 2016, DOI: 10.1039/C5SC03986J
+");
+Insert Into images(art, name) values(49,"images/88133271.jpg");
+Insert Into news(title, dat, author, contents) values("Sahar's paper is published in Advanced Healthcare Materials","Jan 12, 2016, 2:35 PM","by Jacob Jordahl","S. Rahmani, A. M. Ross, T. H. Park, H. Durmaz, A. F. Dishman, D. Prieskorn, N. Jones, R. Altschuler, J. Lahann, 
+<a href=\"http://onlinelibrary.wiley.com/doi/10.1002/adhm.201500141/abstract\">“Dual Release Carriers for Cochlear Delivery”</a>
+, Adv. Healthc. Mater. (2016) 5(1), 94-100
+");
+Insert Into news(title, dat, author, contents) values("Welcome Stephanie to the Lahann Lab","Jan 15, 2016, 2:00 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(51,"images/1867253.jpg");
+Insert Into news(title, dat, author, contents) values("Amit's Paper Published in Small","Jan 25, 2016, 4:07 PM","by Jacob Jordahl","A. Sitt, J. Soukupova, D. Miller, D. Verdi, R. Zboril, H. Hess, J. Lahann. \"
+<a href=\"http://onlinelibrary.wiley.com/doi/10.1002/smll.201503467/full\">Microscale Rockets and Picoliter Containers Engineered from Electrospun Polymeric Microtubes</a>
+\", Small. (2016), DOI: 10.1002/smll.201503467
+");
+Insert Into news(title, dat, author, contents) values("Press Release: New surface could streamline medical tests","Jan 27, 2016, 2:39 PM","by Jacob Jordahl","");
+Insert Into images(art, name) values(53,"images/42168327.jpg");
+Insert Into news(title, dat, author, contents) values("Xiaopei's paper was published in Advanced Materials","Jan 27, 2016, 2:46 PM","by Jacob Jordahl","X. Deng, S. He, F. Xie, C. Friedmann, H. Hess, J. Lahann. \"
+<a href=\"http://onlinelibrary.wiley.com/doi/10.1002/adma.201505197/full\">Ultrasensitive In Situ Fluorescence Analysis using Modulated Fluorescence Interference Contrast at Nanostructured Polymer Surfaces</a>
+\", Advanced Materials. (2016), 10.1002/adma.201505197
+");
+Insert Into images(art, name) values(54,"images/90537232.png");
+Insert Into news(title, dat, author, contents) values("Kenneth's Paper was published in Advanced Materials","Mar 2, 2016, 2:00 PM","by Jacob Jordahl","<span style=\"line-height:21.6667px;background-color:transparent\">J. Hao, K.C.K. Cheng, L.G. Kruger, L. Larsson, J.V.Sugai, J. Lahann, W.V. Giannobile. <a href=\"https://sites.google.com/a/umich.edu/lahann/home/goog_362506776\">\"</a></span>
+<span style=\"line-height:21.6667px;background-color:transparent\"><a href=\"http://onlinelibrary.wiley.com/doi/10.1002/adma.201600027/full\" rel=\"nofollow\">Multigrowth Factor Delivery via Immobilization of Gene Therapy Vectors\"</a> Advanced Materials. (2016), DOI: 10.1002/adma.201600027</span>
+");
+Insert Into images(art, name) values(55,"images/55905592.png");
+Insert Into news(title, dat, author, contents) values("Ramya wins Outstanding GSI Award","Mar 3, 2016, 8:19 AM","by Jacob Jordahl","Congratulations to Ramya Kumar for winning the Richard F. and Eleanor A. Towner Prize For Outstanding Graduate Student Instructors. 
+<span style=\"background-color:transparent;line-height:26.6667px\">This award honors up to four engineering GSIs who are exceptional and innovative teachers with a $1,500 cash prize. Nominees must demonstrate </span>
+<span style=\"line-height:26.6667px;background-color:transparent\">excellence in teaching, </span>
+<span style=\"line-height:26.6667px;background-color:transparent\">creativity or innovation as an instructor, and </span>
+<span style=\"line-height:26.6667px;background-color:transparent\">remarkable dedication to student success.</span>
+");
+Insert Into images(art, name) values(56,"images/78907958.png");
+Insert Into news(title, dat, author, contents) values("International Association of Dental Research Cariology Research Group Science Award","Mar 11, 2016, 1:22 PM","by Jacob Jordahl","Nathan won a 2016 International Association of Dental Research Cariology Research Group Science Award, which is intended to recognize the research of the entire research team who contributed to the project being presented at the annual IADR scientific meeting, upcoming in June in Seoul. Congrats Nathan.
+");
+Insert Into news(title, dat, author, contents) values("Stacy wins Advance, Aspire, Achieve Mentoring Award","Mar 22, 2016, 11:16 AM","by Jacob Jordahl","<span style=\"line-height:24px\">Stacy won the Advance, Aspire, Achieve Mentoring Award at the fifth annual Willie Hobbs Moore Luncheon. This award is presented to a University of Michigan student or faculty member who has served as an outstanding mentor to students. She is one of four awardees across the entire University. She was also nominated for the Trailblazer Award at the same event. </span>
+<span style=\"line-height:24px\"><br/></span>
+<span style=\"line-height:24px\">This continues the recognition of Stacy's outreach and professional achievements, as she was the Chemical Engineering Department nominee for the Marian Sarah Parker Graduate Prize earlier this year. Each department chooses one nominee who is an </span>
+outstanding 
+<span style=\"line-height:24px\">who has demonstrated </span>
+<span style=\"line-height:24px\"> Furthermore, she was nominated for the College of Engineering's Distinguished Leadership Award.</span>
+<span style=\"line-height:24px\"><br/></span>
+<span style=\"line-height:24px\">Congrats Stacy!<br/></span>
+");
+Insert Into images(art, name) values(58,"images/2953452.jpg");
+Insert Into news(title, dat, author, contents) values("Undergraduate Summer Fellowship Awards","Apr 20, 2016, 6:05 PM","by Jacob Jordahl","<span style=\"line-height:normal;background-color:rgb(243,243,243)\">We would like to congratulate the following undergraduate students for being awarded summer research fellowships:</span>
+<span style=\"line-height:normal;background-color:rgb(243,243,243)\"><br/></span>
+<font color=\"#222222\"><span style=\"line-height:normal;background-color:rgb(243,243,243)\">Congrats Irina </span></font>
+<span style=\"line-height:normal;background-color:rgb(243,243,243)\">Congrats Irina </span>
+Kopyeva
+<span style=\"line-height:normal\"> for being awarded a </span>
+fellowship 
+<br/>
+<span style=\"color:rgb(34,34,34);line-height:normal;background-color:transparent\">Congrats </span>
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\">Nithya </font></span>
+Nithya 
+Ramamurthy
+<br/>
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\">Congrats to </font></span>
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\">Connor </font></span>
+Congrats to 
+Connor 
+LaPres
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\"><br/></font></span>
+<br/>
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\">Congrats to William </font></span>
+Congrats to William 
+Troske 
+<span style=\"line-height:normal;background-color:transparent\"><font color=\"#222222\">for being awarded the</font></span>
+for being awarded the
+ SURE fellowship for him to continue his research with Nathan over the summer.
+<br/>
+Good work everyone!
+");
+Insert Into news(title, dat, author, contents) values("Undergraduate Research Conference Selections","Apr 20, 2016, 6:09 PM","by Jacob Jordahl"," Congratulations to Irina and Diego who were selected to present posters at the annual National Conference of Undergraduate Research.
+<br/>
+Good job representing the Lahann Lab!
+");
+Insert Into news(title, dat, author, contents) values("Stephie receives DFG postdoctoral research fellowship!","Jun 2, 2016, 7:59 AM","by Jacob Jordahl","Congrats Stephie for receiving the DFG postdoctoral research fellowship. DFG research fellowships are intended to help early career researchers to conduct a defined project at a location of their choice in a country other than Germany and to use it as an opportunity to familiarize themselves with new research methods or to bring a large project to a conclusion.
+");
+Insert Into news(title, dat, author, contents) values("Welcome to Summer Visiting Scholars","Jun 2, 2016, 8:06 AM","by Jacob Jordahl","Please welcome the scholars visiting our lab this summer.
+<span style=\"line-height:27px\"><br/></span>
+<span style=\"line-height:24px;text-align:center;background-color:transparent\">Malte Strozyk and </span>
+<span style=\"text-align:center;line-height:24px;background-color:transparent\">Dorleta Jiménez de Aberasturi</span>
+<span style=\"line-height:1.5;text-align:center;background-color:transparent\"> are visiting us until August from the Luis Liz-Marzan Lab in </span>
+<span style=\"line-height:24px;text-align:center;background-color:transparent\">CIC biomaGUNE.</span>
+<span style=\"line-height:24px;text-align:center;background-color:transparent\">Christoph Hussal is visiting us from the Lahann Lab at KIT until mid-July.</span>
+<font style=\"text-align:center\">Benedikt Neugirg visited us from the </font>
+<span style=\"background-color:rgb(240,240,237)\">Andreas Fery lab at <font color=\"#666666\" face=\"sans-serif\"><span style=\"line-height:20.4px\">Universität </span></font></span>
+<font style=\"text-align:center;background-color:transparent\">Bayreuth</font>
+<font style=\"text-align:center;background-color:transparent\"><span style=\"line-height:24px\"> from April to May.</span></font>
+Benedikt Neugirg visited us from the 
+<span style=\"line-height:20.4px\">Universität </span>
+Bayreuth
+<span style=\"line-height:24px\"> from April to May.</span>
+<span style=\"line-height:24px;text-align:center;background-color:transparent\"><br/></span>
+");
+Insert Into news(title, dat, author, contents) values("Ramya's Paper was published in ACS Applied Materials and Interfaces","Jun 22, 2016, 7:26 AM","by Jacob Jordahl","The performance of polymer interfaces in biology is governed by a wide spectrum of interfacial properties. With the ultimate goal of identifying design parameters for stem cell culture coatings, we developed a statistical model that describes the dependence of brush properties on surface-initiated polymerization (SIP) parameters. Employing a design of experiments (DOE) approach, we identified operating boundaries within which four gel architecture regimes can be realized, including a new regime of associated brushes in thin films. Our statistical model can accurately predict the brush thickness and the degree of intermolecular association of poly[{2-(methacryloyloxy) ethyl} dimethyl-(3-sulfopropyl) ammonium hydroxide] (PMEDSAH), a previously reported synthetic substrate for feeder-free and xeno-free culture of human embryonic stem cells. DOE-based multifunctional predictions offer a powerful quantitative framework for designing polymer interfaces. For example, model predictions can be used to decrease the critical thickness at which the wettability transition occurs by simply increasing the catalyst quantity from 1 to 3 mol %.
+<br/>
+<div style=\"display:block;text-align:center;margin-right:auto;margin-left:auto\"><div style=\"display:block;text-align:center;margin-right:auto;margin-left:auto\"><a href=\"http://pubs.acs.org/appl/literatum/publisher/achs/journals/content/aamick/2016/aamick.2016.8.issue-26/acsami.6b04370/20160629/images/medium/am-2016-043707_0011.gif\" imageanchor=\"1\"><img border=\"0\" src=\"http://pubs.acs.org/appl/literatum/publisher/achs/journals/content/aamick/2016/aamick.2016.8.issue-26/acsami.6b04370/20160629/images/medium/am-2016-043707_0011.gif\"/></a></div><br/></div>
+");
+Insert Into images(art, name) values(63,"images/56263555.gif");
+Insert Into news(title, dat, author, contents) values("Luis Awarded K99 Pathway to Independence Award!","Aug 3, 2016, 9:01 AM","by Jacob Jordahl","Luis was one of 33 awarded K99 applications this year for his research in studying the cancer microenvironment; this corresponds to a 3% funding rate. The monetary compensation of the award equates to approximately $1 million over the course of five years to help Luis start his own lab in his transition to a tenure-track faculty member. 
+<span style=\"line-height:24px\"><br/></span>
+<span style=\"line-height:24px\">    </span>
+");
+Insert Into images(art, name) values(64,"images/28398988.jpg");
+Insert Into news(title, dat, author, contents) values("Welcome Ayse!","Sep 29, 2016, 1:03 PM","by Daniel Quevedo","<span style=\"text-align:center;background-color:transparent\">We would like to welcome </span>
+<a href=\"http://lahann.engin.umich.edu/people/ayse-muniz\">Ayse</a>
+<span style=\"text-align:center;background-color:transparent\"> to the Lahann Lab. Ayse completed her Bachelor's degree at the University of New Mexico and will be studying in the Department of Macromolecular Science and Engineering. She is a recipient of the NSF Graduate Research Fellowship and the Rackham Merit Fellowship. Welcome Ayse!</span>
+");
+Insert Into images(art, name) values(65,"images/57524854.jpg");
+Insert Into news(title, dat, author, contents) values("Welcome Judith!","Sep 29, 2016, 1:07 PM","by Daniel Quevedo","");
+Insert Into images(art, name) values(66,"images/23241685.jpg");
+Insert Into news(title, dat, author, contents) values("Jake has successfully defended his thesis! Congratulations Dr. Jordahl!","Sep 29, 2016, 1:13 PM","by Daniel Quevedo","");
+Insert Into images(art, name) values(67,"images/31366124.jpg");
+Insert Into news(title, dat, author, contents) values("Nathan wins the IADR Colgate Research in Prevention Award!","Sep 30, 2016, 11:35 AM","by Daniel Quevedo","This award, sponsored by Colgate-Palmolive Company, highlighted his research on \"Dental Caries Diagnosis with Fluorescent Biopolymer Nanoparticles\" at the 2016 IADR conference in Seoul, South Korea (June 22-25, 2016).  The award program is designed to encourage young investigators to undertake research in the prevention of oral diseases and to facilitate their presentation of this work to the international dental and oral health research community.  This was one of six awards given at a private luncheon with IADR president, Marc Heft, Colgate-Palmolive VP of Global Oral Care, Marsha Butler, and GreenMark BioMedical Inc. CEO Steven Bloembergen. For more information, see the award description 
+<a href=\"http://www.iadr.com/i4a/pages/index.cfm?pageid=3422#.V-6K3a3ZjvY\">here</a>
+.
+<br/>
+<br/>
+Congrats Nathan!
+");
+Insert Into images(art, name) values(68,"images/32831637.jpg");
+Insert Into news(title, dat, author, contents) values("Undergraduate Student Benjamin Serratos Wins UROP poster award","Sep 30, 2016, 11:38 AM","by Daniel Quevedo","Undergraduate research assistant Benjamin Serratos (MSE) capped off a successful first semester working in the Lahann Lab winning a blue ribbon at the 2016 UROP Summer Symposium.  He presented a poster on research work with Nathan about the preparation of PLGA nanoparticles for in vivo targeting of tumor associated macrophages.
+<br/>
+Keep it up Ben!
+");
+Insert Into images(art, name) values(69,"images/81739299.jpg");
+Insert Into news(title, dat, author, contents) values("Lab Team Wins Procter & Gamble Team Innovation Award","Nov 1, 2016, 2:14 PM","by Daniel Quevedo","Ramya's poster at the 40th Annual Macro Symposium, \"Sugar coating the answer to virus binding: Glycocalyx-miemtic Interfaces\",  was selected to receive the inaugural 
+ Team Innovation Award. This award sponsored by Procter & Gamble was selected by a team of faculty judges and 
+ representatives from nearly 70 posters presented at the symposium. It seeks to award innovative and collaborative research involving students from several different programs and departments. The award is shared between team members, Kenneth, Irina, Domenic and Ramya.
+");
+Insert Into news(title, dat, author, contents) values("Nathan wins award through Fast Forward Medical Innovation (FFMI)","Dec 1, 2016, 8:48 AM","by Daniel Quevedo","Nathan participated in the four-week Fast Forward Medical Innovation (FFMI) Early Technology Development course with GreenMark Biomedical co-founders Dr. Steven Bloembergen and Dr. Wendy Bloembergen to explore the commercialization potential of his research on starch nanoparticles for early cavity detection.  After completing more than 40 customer discovery interviews, his team presented a pitch deck to the FFMI instructors, where they were selected as the therapeutics/diagnostic track winner and the overall winner.
+");
+Insert Into news(title, dat, author, contents) values("Luis starts new job at Purdue University as an Assistant Professor. Good Luck Luis!","Jan 22, 2017, 12:48 PM","by Daniel Quevedo","Luis has sadly left our lab and begun his new job at Purdue University as an Assistant Professor in the Department of Biomedical Engineering. Thank you Luis for all your years of hard work and we all wish you luck in your new job!
+");
+Insert Into images(art, name) values(72,"images/9460416.jpg");
+Insert Into news(title, dat, author, contents) values("Welcome Jonathan!","Jan 22, 2017, 1:02 PM","by Daniel Quevedo","Jonathan Gerszberg has joined our lab as chemical engineering PhD student. He will be working on the assembly of chiral fibers and the engineering of reactive surfaces using CVD. Welcome to your new home Jonathan!
+");
+Insert Into images(art, name) values(73,"images/74791939.png");
+Insert Into news(title, dat, author, contents) values("Judith returns to Berlin after finishing her master's thesis","Jan 22, 2017, 1:42 PM","by Daniel Quevedo","");
+Insert Into images(art, name) values(74,"images/82181592.jpg");
+Insert Into news(title, dat, author, contents) values("Lahann Lab Featured in MLive","Feb 1, 2017, 10:32 AM","by Daniel Quevedo","Our lab was featured in a story on MLive, a local newspaper, about the revitalization of the NCRC, where our lab is located. Click 
+<a href=\"http://www.mlive.com/news/ann-arbor/index.ssf/2017/01/in_decade_since_pfizers_exit_n.html\" target=\"_blank\">here</a>
+ to find out more!                                                                                            
+              
+");
+Insert Into images(art, name) values(75,"images/1874645.jpg");
+Insert Into news(title, dat, author, contents) values("Kenneth has successfully defended his thesis! Congratulations Dr. Cheng!","May 1, 2017, 11:26 AM","by Daniel Quevedo","After many years of working with us, Kenneth has defended his thesis! 
+<b>Congratulations Dr. Cheng!</b>
+");
+Insert Into images(art, name) values(76,"images/98554069.jpg");
+Insert Into images(art, name) values(76,"images/12602242.jpg");
+Insert Into images(art, name) values(76,"images/58768058.jpg");
+Insert Into news(title, dat, author, contents) values("Lahann Lab Undergrads Present at UROP Poster Session","May 1, 2017, 11:39 AM","by Daniel Quevedo","At the 2017 UROP symposium, the Lahann Lab undergraduate researchers presented their research advances to an audience of Michigan students and faculty. Congratulations to Abbi Bader, Sean McLoughlin, Grayson Rice, and in particular to David Bonhard and Alejandro Hinojosa, who won an award for having the best poster of their session! Keep up the good work!
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+");
+Insert Into images(art, name) values(77,"images/16074257.jpg");
+Insert Into images(art, name) values(77,"images/79076986.jpg");
+Insert Into images(art, name) values(77,"images/13184068.jpg");
+Insert Into images(art, name) values(77,"images/88057816.jpg");
+Insert Into images(art, name) values(77,"images/36984694.jpg");
+Insert Into news(title, dat, author, contents) values("Nathan is awarded 3M Summer Fellowship","Jun 8, 2017, 10:53 AM","by Daniel Quevedo","Nathan was selected as a winner of the inaugural Macromolecular Science and Engineering 3M Summer Fellowship.  The fellowship will support his continued research while finishing up his dissertation. Congrats Nathan!
+");
+Insert Into news(title, dat, author, contents) values("Brad begins new job at Trinity Partners. Good luck Brad!","Jun 8, 2017, 11:22 AM","by Daniel Quevedo","Brad has very sadly left our lab for hopefully greener pastures! He has accepted a job as a Consultant at Trinity Partners, a global life sciences consulting firm located in Boston. We're very sad to see you go and wish you all the best in your new job!
+");
+Insert Into images(art, name) values(79,"images/45782177.png");
+Insert Into images(art, name) values(79,"images/10185007.jpg");
+Insert Into news(title, dat, author, contents) values("Kathleen begins new job as an Assistant Professor at NJIT","Aug 10, 2017, 5:34 AM","by Daniel Quevedo","After many great years with us, Kathleen has sadly left our lab. She has accepted a great new job as an Assistant Professor at the New Jersey Institute of Technology (NJIT) Department of Chemical Engineering. We're very sad to see you go and hope you will do great in your new home and do some great science!
+");
+Insert Into images(art, name) values(80,"images/13908240.jpg");
+Insert Into images(art, name) values(80,"images/53547095.png");
+Insert Into news(title, dat, author, contents) values("Stacy begins new job in Exxon Mobil","Aug 10, 2017, 5:58 AM","by Daniel Quevedo","Stacy has sadly left the lab but her contributions, academic and non-academic, will always remain with us. She has accepted a great job at Exxon Mobil in Houston. You will be missed at the Lahann Lab. We wish you all the best in your life journey in Texas!
+");
+Insert Into images(art, name) values(81,"images/77642266.jpg");
+Insert Into news(title, dat, author, contents) values("Stacy has successfully defended her thesis! Congratulations Dr. Ramcharan","Aug 10, 2017, 6:09 AM","by Daniel Quevedo","After many years of working with us, Stacy has defended her thesis!
+Congratulations Dr. Ramcharan!
+");
+Insert Into images(art, name) values(82,"images/24131109.png");
+Insert Into news(title, dat, author, contents) values("Lahannian Chemical Engineers Present at the ChE Symposium","Aug 10, 2017, 6:14 AM","by Daniel Quevedo","Nahal and Stephie present their work on nanoparticles. 
+Another photo of Jason in the wild! Here, he presents to Prof. Ziff about his nanoparticles.
+");
+Insert Into images(art, name) values(83,"images/56676800.jpg");
+Insert Into images(art, name) values(83,"images/93468231.jpg");
+Insert Into news(title, dat, author, contents) values("Nathan has successfully defended his thesis! Congratulations Dr. Jones!","Jan 29, 2018, 12:27 PM","by Daniel Quevedo","After many years of hard work, Nathan has defended his thesis! 
+<b>Congrats Dr. Jones!</b>
+");
+Insert Into images(art, name) values(84,"images/64427100.jpg");
+Insert Into news(title, dat, author, contents) values("Nathan begins new job at the University of Michigan Dental School","Jan 29, 2018, 1:34 PM","by Daniel Quevedo","After a succesful PhD stint with us, Nathan has left us for a post-doc position at 
+<font color=\"#666666\">the </font>
+the 
+UM Dental School Department of Cariology, Restorative Sciences, and Endodontics. We're sad to see you go, will greedly take the window seat in your office, and wish you all the best in your future en devours!
+");
+Insert Into images(art, name) values(85,"images/41297056.png");
+Insert Into images(art, name) values(85,"images/34653181.jpg");
+Insert Into news(title, dat, author, contents) values("Lahann Lab helps organize and participates in the 2017 Biomaterials Day at the University of Michigan","Jan 29, 2018, 1:35 PM","by Daniel Quevedo","<div style=\"display:block;text-align:left\"><br/></div>
+The Lahann Lab worked very hard for months to help organize the very successful the Society for Biomaterials' 2017 Biomaterials Day, here at the University of Michigan!
+<br/>
+The day featured many invited speakers from universities throughout the Midwest, oral and poster presentations from students, and panels on careers in industry and academia.
+<br/>
+It was definitely all hands on deck for the occasion. Nahal, Dylan and Danny ran around helping make sure the conference would not fall apart. Our post-docs, Stephie and Kenneth, both participated as judges in the poster and oral presentations. Several of our undergrads presented posters. Last but not least, Prof. Lahann was a panel member in the academic career panel.
+<br/>
+It was a great occasion, with over 200 participants, and a great learning and networking opportunity for all those involved.
+<br/>
+Good job everyone!
+<br/>
+Thank you to Brandon Baier and Mike Funkhouser from UM-BME for all the great photos!
+<br/>
+<br/>
+<div style=\"display:block;text-align:center;margin-right:auto;margin-left:auto\"><a href=\"http://lahann.engin.umich.edu/news/lahannlabhelpsorganizeandparticipatesinthe2017biomaterialsdayattheuniversityofmichigan/4L5A0320.CR2.jpg?attredirects=0\" imageanchor=\"1\"><img border=\"0\" height=\"213\" src=\"http://lahann.engin.umich.edu/_/rsrc/1554126715726/news/lahannlabhelpsorganizeandparticipatesinthe2017biomaterialsdayattheuniversityofmichigan/4L5A0320.CR2.jpg?height=213&amp;width=320\" width=\"320\"/></a></div>
+<div style=\"display:block;text-align:center;margin-right:auto;margin-left:auto\"><span style=\"font-size:10px\">Kenneth judging a poster presentation</span></div>
+");
+Insert Into images(art, name) values(86,"images/20725448.jpg");
+Insert Into images(art, name) values(86,"images/91660519.jpg");
+Insert Into images(art, name) values(86,"images/57814448.jpg");
+Insert Into images(art, name) values(86,"images/55561489.jpg");
+Insert Into images(art, name) values(86,"images/91855487.jpg");
+Insert Into news(title, dat, author, contents) values("Ramya has successfully defended her thesis! Congratulations Dr. Kumar!","Mar 19, 2018, 8:21 AM","by Daniel Quevedo","This past week, Ramya defended her thesis, the culmination of many years of hard work. 
+<b>Congratulations Dr. Kumar!</b>
+");
+Insert Into images(art, name) values(87,"images/79355451.png");
+Insert Into news(title, dat, author, contents) values("Kenneth begins new job at IBM","Mar 19, 2018, 8:32 AM","by Daniel Quevedo","After many years with us, first as a PhD students and then a Post Doc, Kenneth has decided to move on to greener pastures to begin his job as a Post Doc at IBM. We're all devastated to see our resident CVD expert, source of all knowledge, and overall very kind person go, but we wish him all the best! So long, and thanks for all the snacks. 
+<br/>
+You really didn't have to leave all those snacks.
+");
+Insert Into images(art, name) values(88,"images/24934201.jpg");
+Insert Into images(art, name) values(88,"images/27159934.png");

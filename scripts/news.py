@@ -98,8 +98,8 @@ Create Table images(
 		references news(pk)
 ) engine = innoDB;
 ''')
-for i in range(len(articleSave)):
+for i in reversed(range(len(articleSave))):
 	# The sql stuff
 	print("Insert Into news(title, dat, author, contents) values(\"" + articleSave[i]["title"].replace("\"", "\\\"") + "\",\"" + articleSave[i]["time"].replace("\"", "\\\"") + "\",\"" + articleSave[i]["poster"].replace("\"", "\\\"") + "\",\"" + articleSave[i]["text"].replace("\"", "\\\"") + "\");")
 	for j in articleSave[i]["images"]:
-		print("Insert Into images(art, name) values(" + str(i+1) + ",\"" + str(j) + "\");")
+		print("Insert Into images(art, name) values(" + str(88 - i) + ",\"" + str(j) + "\");")

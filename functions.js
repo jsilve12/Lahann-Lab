@@ -7,13 +7,13 @@ function editFunc(key, numb, val = document.getElementById(key).innerHTML, check
 	url = "update.php?k=";
 
 	//Add the get parameters
-	url = url.concat(key);
+	url = url.concat(encodeURI(key));
 	url = url.concat("&v=");
-	url = url.concat(val);
+	url = url.concat(encodeURI(val));
 	url = url.concat("&pk=");
-	url = url.concat(numb);
+	url = url.concat(encodeURI(numb));
 	url = url.concat("&type=");
-	url = url.concat(type)
+	url = url.concat(encodeURI(type));
 	console.log(url);
 
 	//Actually interact with JSON
@@ -132,4 +132,11 @@ function imgDelete(key)
 	  .then((data) => {
 		console.log(data);
 	  })
+}
+
+// Adds a place to upload additional images
+function addImage()
+{
+	console.log("Hello");
+	//Document.getElementById("MoreImages");
 }

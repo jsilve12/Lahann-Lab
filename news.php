@@ -12,7 +12,7 @@
 							<?php
 								include("functions.php");
 								include("generic/header.html");
-								$news = $pdo->prepare("select * from news order by pk asc");
+								$news = $pdo->prepare("select * from news order by pk desc");
 								$news->execute();
 
 								foreach($news as $arti)

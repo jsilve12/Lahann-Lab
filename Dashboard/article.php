@@ -1,3 +1,35 @@
+<?php
+  # You can only create an account, if you are logged in
+  session_start();
+  include("../functions.php");
+  if(loggedIn($_SESSION) == 1 && $_SESSION['authorization'] > 1)
+  {
+    # Must have atleast an admin level of authorization
+    if($_SERVER["REQUEST_METHOD"] === "POST")
+    {
+      # Inserts the values
+      $ins = $pdo->prepare("Insert Into
+              news(title, dat, author, contents)
+              values(:title, :dat, :author, :contents)");
+      $ins->execute(array(
+        "title" => $_POST['title'],
+        "dat" => $_POST['date'],
+        "author" => $_POST['author'],
+        "contents" => $_POST['Contents']
+      ));
+
+      # Uploads the image
+      $id = $pdo->lastInsertId();
+      print($id);
+      #imgSave($id, $pdo);
+    }
+  }
+  else
+  {
+    header("Location: index.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,24 +56,7 @@
 
 <body id="page-top">
   <?php
-    session_start();
     include("head.php");
-    include("../functions.php");
-    if(loggedIn($_SESSION) == 2)
-    {
-      header("Location: login.php");
-      exit();
-    }
-    if($_SESSION['authorization'] < 2)
-    {
-      header("Location: index.php");
-      exit();
-    }
-    # Inserts the article
-    if($_SERVER["REQUEST_METHOD"] === "POST")
-    {
-
-    }
   ?>
   <div class="container">
     <div class="card card-register mx-auto mt-5">
@@ -67,32 +82,27 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="Contents">Contents</label>
             <div class="form-label-group">
-              <input type="text" name="Contents" id="Contents" class="form-control" placeholder="Contents" required="required" autofocus="autofocus">
-              <label for="Contents">Contents</label>
+              <textarea type="text" name="Contents" id="Contents" class="form-control" rows=5 required="required" autofocus="autofocus"></textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" name="fileToUpload1" id="fileToUpload" class="form-control" placeholder="Picture">
+              <input type="file" name="fileToUpload1" id="fileToUpload1" class="form-control" placeholder="Picture">
               <label for="picture">Picture</label>
             </div>
           </div>
+          <div id = "MoreImages">
+          </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" name="fileToUpload2" id="fileToUpload" class="form-control" placeholder="Picture">
-              <label for="picture">Picture</label>
+              <button type="button" onclick=addImage()>Add Additional Photos</button>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" name="fileToUpload3" id="fileToUpload" class="form-control" placeholder="Picture">
-              <label for="picture">Picture</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="file" name="fileToUpload4" id="fileToUpload" class="form-control" placeholder="Picture">
+              <input type="file" name="fileToUpload2" id="fileToUpload2" class="form-control" placeholder="Picture">
               <label for="picture">Picture</label>
             </div>
           </div>
