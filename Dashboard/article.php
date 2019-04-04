@@ -20,8 +20,7 @@
 
       # Uploads the image
       $id = $pdo->lastInsertId();
-      print($id);
-      #imgSave($id, $pdo);
+      imgSave($id, $pdo, 2);
     }
   }
   else
@@ -89,20 +88,7 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="file" name="fileToUpload1" id="fileToUpload1" class="form-control" placeholder="Picture">
-              <label for="picture">Picture</label>
-            </div>
-          </div>
-          <div id = "MoreImages">
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <button type="button" onclick=addImage()>Add Additional Photos</button>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="file" name="fileToUpload2" id="fileToUpload2" class="form-control" placeholder="Picture">
+              <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" placeholder="Picture">
               <label for="picture">Picture</label>
             </div>
           </div>

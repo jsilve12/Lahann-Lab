@@ -138,5 +138,6 @@ function imgDelete(key)
 function addImage()
 {
 	console.log("Hello");
-	//Document.getElementById("MoreImages");
+	console.log(document.getElementById("MoreImages").innerHTML);
+	Document.getElementById("MoreImages").innerHTML = "Hello";
 }
