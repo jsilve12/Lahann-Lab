@@ -13,7 +13,7 @@
     $users = $users->fetchall();
 
     # Redirects if needed
-    if(sizeof($users) && password_verify($_POST['password'], $users[0]["password"]))
+    if(sizeof($users) && password_verify($_POST['password'], $users[0]["password"]) && $users[0]["experience"] < 5)
     {
       $_SESSION["username"] = $users[0]["person_id"];
       $_SESSION["authorization"] = $users[0]["power"];
