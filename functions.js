@@ -104,16 +104,24 @@ function newsEditFunc(personId)
 			editFunc("contents", personId, document.getElementById(personId.toString().concat("contents")).innerHTML, "true", 1);
 		}
 		catch{}
+		try
+		{
+			var selector = document.getElementById(personId.toString().concat("Category"));
+			editFunc("Category", personId, selector[selector.selectedIndex].value, "true", 1);
+		}
+		catch{}
 
 		document.getElementById(personId.toString().concat("title")).contentEditable = false;
 		document.getElementById(personId.toString().concat("author")).contentEditable = false;
 		document.getElementById(personId.toString().concat("contents")).contentEditable = false;
+		document.getElementById(personId.toString().concat("Category")).disabled = true;
 	}
 	else
 	{
 		document.getElementById(personId.toString().concat("title")).contentEditable = true;
 		document.getElementById(personId.toString().concat("author")).contentEditable = true;
 		document.getElementById(personId.toString().concat("contents")).contentEditable = true;
+		document.getElementById(personId.toString().concat("Category")).disabled = false;
 	}
 }
 

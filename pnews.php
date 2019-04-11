@@ -9,10 +9,11 @@
 				<div class="fullwidth-block">
 					<div class="container">
 						<div class="">
+							<h1 style="text-align:center">Public News</h1>
 							<?php
 								include("functions.php");
 								include("generic/header.html");
-								$news = $pdo->prepare("select * from news order by pk desc");
+								$news = $pdo->prepare("select * from news where Category = 'public' order by pk desc");
 								$news->execute();
 
 								foreach($news as $arti)

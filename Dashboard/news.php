@@ -52,6 +52,7 @@ if($_SESSION['authorization'] < 2)
                     <th>Title</th>
                     <th>Author</th>
                     <th>Content</th>
+                    <th>Type</th>
                     <th>Images</th>
                     <th>Edit</th>
                   </tr>
@@ -62,6 +63,7 @@ if($_SESSION['authorization'] < 2)
                     <th>Title</th>
                     <th>Author</th>
                     <th>Content</th>
+                    <th>Type</th>
                     <th>Images</th>
                     <th>Edit</th>
                   </tr>
@@ -92,6 +94,12 @@ if($_SESSION['authorization'] < 2)
                                 <td id = '".$user['pk']."title'>".$user['title']."</td>
                                 <td id = '".$user['pk']."author'>".$user['author']."</td>
                                 <td id = '".$user['pk']."contents'>".$user['contents']."</td>
+                                <td>
+                                  <select id = '".$user['pk']."Category' disabled>
+                                    <option value = 'Lab' ".indCheck($user, "Category", "Public").">Public News</option>
+                                    <option value = 'Lab' ".indCheck($user, "Category", "Lab").">Lab News</option>
+                                  </select>
+                                </td>
                                 <td id = '".$user['pk']."images'>");
                       # Displays the image
                       foreach($img as $val)
