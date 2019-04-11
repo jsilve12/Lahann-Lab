@@ -91,13 +91,17 @@
 		$target_file = (basename($_FILES['fileToUpload']['name']));
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 		$fileName = strval(rand(0,100000000));
-		$fileName = $fileName.".".$imageFileType;
+		if($imageFileType != "")
+		{
+			$fileName = $fileName.".".$imageFileType;
+		}
+		else
+		{
+			$fileName = "";
+		}
 
 		# Makes sure that it is actually an image and insert
 		move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_dir.$fileName);
-
-		# Updates the database
-		$fileName = "images/".$fileName;
 
 		# Update for the person
 		if($type == 1)
@@ -109,9 +113,49 @@
 		# Update for the news
 		if($type == 2)
 		{
+			# Updates the database
+			$fileName = "images/".$fileName;
 			$user = $pdo->prepare("Insert into images(art, name) values(:pk, :photo)");
 			$user->execute(array("photo" => $fileName, "pk" => $val));
 		}
+	}
+
+	# Saves the Resume
+	function resSave($val, $pdo, $type = 1)
+	{
+		# Calculates the address
+		$target_dir = "../resume/";
+		$target_file = (basename($_FILES['ResumeToUpload']['name']));
+		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+		$fileName = strval(rand(0,100000000));
+		if($imageFileType != "")
+		{
+			$fileName = $fileName.".".$imageFileType;
+		}
+		else
+		{
+			$fileName = "";
+		}
+
+		# Makes sure that it is actually an image and insert
+		move_uploaded_file($_FILES['ResumeToUpload']['tmp_name'], $target_dir.$fileName);
+
+		# Updates the database
+		$fileName = "resume/".$fileName;
+
+		# Update for the person
+		if($type == 1)
+		{
+			$user = $pdo->prepare("Update person Set Resume = :photo Where person_id = :pk");
+			$user->execute(array("photo" => $fileName, "pk" => $val));
+		}
+
+		# Update for the something else?
+//		if($type == 2)
+//		{
+//			$user = $pdo->prepare("Insert into images(art, name) values(:pk, :photo)");
+//			$user->execute(array("photo" => $fileName, "pk" => $val));
+//		}
 	}
 ?>
 <script src="../functions.js"></script>

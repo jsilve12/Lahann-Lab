@@ -53,7 +53,7 @@
         <!-- Icon Cards-->
         <?php
           # Gets the users information
-          $user = $pdo->prepare("Select name, email, department, location, years, mentor, photo, Education, Research, Research_Experience, Awards from person where person_id = :pk");
+          $user = $pdo->prepare("Select name, email, department, location, years, mentor, photo, Education, Research, Research_Experience, Awards, Resume from person where person_id = :pk");
           $user->execute(array("pk" => $_SESSION['username']));
           $user = $user->fetchall();
 
@@ -76,6 +76,23 @@
                             <input type='file' name='fileToUpload' id='fileToUpload'>
                             <input type='hidden' name='person_id' id='person_id' value='".$_SESSION['username']."'>
                             <input type='submit' value='Upload Image' name='submit'>
+                          </form>
+                        </div>
+                      </div>");
+              }
+              else if($key == "Resume")
+              {
+                echo("<div class='row'>
+                        <div class='col-xl-3 col-sm-6 mb-3'>".
+                          $key.": <div id = '".$key."'>".$value."</div>
+                        </div>
+                        <div class='col-xl-3 col-sm-6 mb-3'>
+                          <form action='resupdate.php?type=1' method='post' enctype='multipart/form-data'>
+                            Upload a new Resume
+                            </br>
+                            <input type='file' name='ResumeToUpload' id='ResumeToUpload'>
+                            <input type='hidden' name='person_id' id='person_id' value='".$_SESSION['username']."'>
+                            <input type='submit' value='Upload Resume' name='submit'>
                           </form>
                         </div>
                       </div>");

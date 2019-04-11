@@ -57,7 +57,12 @@
 					echo("<a href = \"".$paper["link"]."\" alt = 'Link to the paper on " .$paper["title"]." '>");
 				}
 
-				# Deals with the personal survey
+				# Posts the Resume
+				if(array_key_exists("Resume", $stmt[0]) && $stmt[0]["Resume"] != "0" && $stmt[0]["Resume"] != "resume\\")
+				{
+					echo("<h2> Resume </h2>");
+					echo("<h4><a href = '".$stmt[0]["Resume"]."' download>Download my Resume</a><h4>");
+				}
 
 				echo("</div>");
 
