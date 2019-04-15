@@ -33,7 +33,7 @@
 					if($key != 0 && $key != 1 && $key != 5 && $key != 6)
 					{
 						$width = "float:\"left\";\'";
-						if($key == 4) {$width = "width:100%;'";}
+						if($key == 4) {$width = "width:40%;'";}
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
 							if($key == 2) {$gradStud +=1;}
@@ -45,7 +45,7 @@
 										".$value."
 									</h4>");
 							echo("	<img src = \"images/".trim($row['photo'])."\" class = 'featured-image'>
-									<p>".$row['years']."<br>".$row['department']."<br>".$row['Education']."<br>".$row['location']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>
+									<p>".$row['department']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>
 								</div>");
 							if($gradStud == 4)
 							{
