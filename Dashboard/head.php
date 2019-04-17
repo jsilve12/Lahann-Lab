@@ -42,8 +42,10 @@
           <h6 class="dropdown-header">Information Screens:</h6>
           <a class="dropdown-item" href="news.php">News</a>
           <a class="dropdown-item" href="users.php">Users</a>
+          <a class="dropdown-item" href="papers.php">Papers</a>
           <a class="dropdown-item" href="register.php">Register</a>
           <a class="dropdown-item" href="article.php">New Article</a>
+          <a class="dropdown-item" href="paper.php">New Paper</a>
           <h6 class="dropdown-header">Login Screens:</h6>
           <a class="dropdown-item" href="login.php">Login</a>
           <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>

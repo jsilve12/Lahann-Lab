@@ -20,9 +20,14 @@
 								{
 									#Prints out each article
 									echo("<h3 class = 'section-title'><a href='".$arti["link"]."'>".$arti["title"]."</a></h3>");
-									echo("<h5 style='text-align:left'>Authors:".$arti["Author"]."</h5>");
+									echo("<h5 style='text-align:left'>Authors: ".$arti["Author"]."</h5>");
 									echo("<h5 style='text-align:left'>".$arti["abstract"]."</h5>");
-									echo("<img style='width:20%' src = ".$arti["Image"].">");
+
+									# Insert the image
+									if($arti["Image"] != "")
+									{
+										echo("<img style='width:20%' src = ".$arti["Image"].">");
+									}
 									echo("</br>");
 								}
 							?>

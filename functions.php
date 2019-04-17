@@ -109,13 +109,19 @@
 			$user = $pdo->prepare("Update person Set photo = :photo Where person_id = :pk");
 			$user->execute(array("photo" => $fileName, "pk" => $val));
 		}
-
+		elseif($type == 2)
+		{
+			# Update for the news
+			$fileName = "images/".$fileName;
+			$user = $pdo->prepare("Insert into images(art, name) values(:pk, :photo)");
+			$user->execute(array("photo" => $fileName, "pk" => $val));
+		}
 		# Update for the news
-		if($type == 2)
+		elseif($type == 3)
 		{
 			# Updates the database
 			$fileName = "images/".$fileName;
-			$user = $pdo->prepare("Insert into images(art, name) values(:pk, :photo)");
+			$user = $pdo->prepare("Update papers Set Image = :photo where paper_id = :pk");
 			$user->execute(array("photo" => $fileName, "pk" => $val));
 		}
 	}
