@@ -46,15 +46,19 @@
 				# Grabs the papers that person is on
 				$stmt1 = $pdo->prepare('SELECT * FROM people_papers WHERE person_id = '.$stmt[0]['person_id']);
 				$stmt1->execute();
+				$stmt1 = $stmt1->fetchAll();
 				echo("<h2> Papers </h2>");
 
 				foreach( $stmt1 as $paper)
 				{
 					$stmt2 = $pdo->prepare('SELECT * FROM papers where paper_id = '.$paper["paper_id"]);
 					$stmt2->execute();
-					echo("<h4> ".$paper["title"]." </h4>");
-					echo("<p> ".$paper["abstract"]." </p>");
-					echo("<a href = \"".$paper["link"]."\" alt = 'Link to the paper on " .$paper["title"]." '>");
+					$stmt2 = $stmt2->fetchAll();
+
+					echo("<h5>Title: ".$stmt2[0]["title"]." </h5>");
+					echo("<p>Abstract: ".$stmt2[0]["abstract"]." </p>");
+					echo("Link to Article: <a href = \"".$stmt2[0]["link"]."\" alt = 'Link to the paper on'>" .$stmt2[0]["title"]." </a>
+					</br></br>");
 				}
 
 				# Posts the Resume
