@@ -125,6 +125,50 @@ function newsEditFunc(personId)
 	}
 }
 
+// Function for the admin to update papers
+function paperEditFunc(personId)
+{
+	//Use the name row as a litmus for editability (if it has already been edited)
+	if(document.getElementById(personId.toString().concat("title")).contentEditable == "true")
+	{
+		//Try catch this because the tail bit would cause an error
+		try
+		{
+			console.log(personId)
+			editFunc("title", personId.toString(), document.getElementById(personId.toString().concat("title")).innerHTML, "true", 2);
+		}
+		catch{}
+		try
+		{
+			editFunc("Author", personId, document.getElementById(personId.toString().concat("Author")).innerHTML, "true", 2);
+		}
+		catch{}
+		try
+		{
+			editFunc("abstract", personId, document.getElementById(personId.toString().concat("abstract")).innerHTML, "true", 2);
+		}
+		catch{}
+		try
+		{
+			var selector = document.getElementById(personId.toString().concat("Category"));
+			editFunc("Project", personId, selector[selector.selectedIndex].value, "true", 2);
+		}
+		catch{}
+
+		document.getElementById(personId.toString().concat("title")).contentEditable = false;
+		document.getElementById(personId.toString().concat("Author")).contentEditable = false;
+		document.getElementById(personId.toString().concat("abstract")).contentEditable = false;
+		document.getElementById(personId.toString().concat("Category")).disabled = true;
+	}
+	else
+	{
+		document.getElementById(personId.toString().concat("title")).contentEditable = true;
+		document.getElementById(personId.toString().concat("Author")).contentEditable = true;
+		document.getElementById(personId.toString().concat("abstract")).contentEditable = true;
+		document.getElementById(personId.toString().concat("Category")).disabled = false;
+	}
+}
+
 // Removes an image from the news
 function imgDelete(key)
 {

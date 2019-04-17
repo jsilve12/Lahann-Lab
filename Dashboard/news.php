@@ -96,7 +96,7 @@ if($_SESSION['authorization'] < 2)
                                 <td id = '".$user['pk']."contents'>".$user['contents']."</td>
                                 <td>
                                   <select id = '".$user['pk']."Category' disabled>
-                                    <option value = 'Lab' ".indCheck($user, "Category", "Public").">Public News</option>
+                                    <option value = 'Public' ".indCheck($user, "Category", "Public").">Public News</option>
                                     <option value = 'Lab' ".indCheck($user, "Category", "Lab").">Lab News</option>
                                   </select>
                                 </td>

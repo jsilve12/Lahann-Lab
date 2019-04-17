@@ -55,10 +55,11 @@
 					$stmt2->execute();
 					$stmt2 = $stmt2->fetchAll();
 
-					echo("<h5>Title: ".$stmt2[0]["title"]." </h5>");
-					echo("<p>Abstract: ".$stmt2[0]["abstract"]." </p>");
-					echo("Link to Article: <a href = \"".$stmt2[0]["link"]."\" alt = 'Link to the paper on'>" .$stmt2[0]["title"]." </a>
-					</br></br>");
+					echo("<div style='margin:0%; margin-left: 20%'>");
+					echo("<h5 style='margin:0%'>Title: ".$stmt2[0]["title"]." </h5>");
+					echo("<p style='margin:0%'>Abstract: ".$stmt2[0]["abstract"]." </p>");
+					echo("<div style='margin:0%>Link to Article: <a href = \"".$stmt2[0]["link"]."\" alt = 'Link to the paper on'>" .$stmt2[0]["title"]." </a></div>
+					</br></br></div>");
 				}
 
 				# Posts the Resume

@@ -22,6 +22,17 @@
       # Uploads the image
       $id = $pdo->lastInsertId();
       imgSave($id, $pdo, 3);
+
+      # Saves the Authors
+      $people = explode(",", $_POST['author']);
+      foreach($people as $person)
+      {
+        # Looks for the people
+        $pep = $pdo->prepare("Select * from person where name = :name");
+        $pep->execute(array(
+          "name" => $person
+        ));
+      }
     }
   }
   else
@@ -78,7 +89,7 @@
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" name="author" id="author" class="form-control" placeholder="author" required="required" autofocus="autofocus">
-              <label for="author">Author</label>
+              <label for="author">Authors</label>
               If you separate all the author's names by comma's, and match it to their name in the database, it will show up on their page.
             </div>
           </div>
