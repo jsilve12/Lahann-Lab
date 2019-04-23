@@ -56,19 +56,9 @@
 								</ol>
 							</div>
 							<h4>Selected Publications:</h4>
-							<ol class = "research-patents">
-								<li>J. Hao, K.C.K. Cheng, L.G. Kruger, L. Larsson, J.V.Sugai, J. Lahann, W.V. Giannobile. "Multigrowth Factor Delivery via Immobilization of Gene Therapy Vectors" Advanced Materials. (2016), DOI: 10.1002/adma.201600027</li>
-								<li>F. B. L. Gall, C. Friedmann, L. Heinke, et al.  "Free-Standing Nanomembranes Based on Selective CVD Deposition of Functional Poly-p-xylylenes", ACS Nano, (2015)</li>
-								<li>A. Ross, H. Durmaz, K. Cheng, et al. "Selective and Reversible Binding of Thiol-Functionalized Biomolecules on Polymers Prepared via Chemical Vapor Deposition Polymerization", Langmuir, (2015)</li>
-								<li>F. Bally, K. Cheng, H. Nandivada, et al. "Co-Immobilization of Biomolecules on Ultra-thin Reactive Chemical Vapor Deposition Coatings Using Multiple Click Chemistry Strategies", ACS Applied Materials & Interfaces, (2013)</li>
-								<li>A.M. Ross, Z. Jiang, M. Bastmeyer, J. Lahann, "Physical Aspects of Cell Culture Substrates: Topography, Roughness, and Elasticity", Small (2012) </li>
-								<li>T. D. Yoshida Kozai, N. B. Langhals, et al. "Ultra-small Implantable Composite Microelectrodes with Bioactive Surfaces for Chronic Neural Interfaces", Nature Materials (2012)</li>
-								<li>X. Deng, C. Friedmann, J. Lahann, "Bio-Orthogonal "Double-Click"Chemistry Based on Multifunctional Coatings", Angewandte Chemie International Edition (2011)</li>
-								<li>H.Y. Chen, J. Lahann, "Designable Biointerfaces Using Vapor-Based Reactive Polymers", Langmuir (2011)</li>
-								<li>Y. Elkasabi, J. Lahann, P. Krebsbach, "Cellular Transduction Gradients via Vapor-Deposited Polymer Coatings", Biomaterials (2011)</li>
-								<li>H.Y. Chen, M. Hirtz, X. Deng, T. Laue, H. Fuchs, J. Lahann, "Substrate-Independent Dip-Pen Nanolithography Based on Reactive Coatings", JACS (2010)</li>
-								<li>Y. Zhang, X. Deng, et al. "The effect of Runx2 immobilization on poly(epsilon-caprolactone) on osteoblast differentiation of bone marrow stromal cells in vitro", Biomaterials (2010)</li>
-							</ol>
+							<?php
+								Publications(1, $pdo);
+							?>
 							<h4>Selected Patents:</h4>
 							<ul class="research-patents">
 								<li>Y. Elkasabi, J. Lahann. "CVD Coating with Reactive Composition Gradients", 3783 (Pending)</li>

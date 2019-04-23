@@ -48,20 +48,13 @@
 				$stmt1->execute();
 				$stmt1 = $stmt1->fetchAll();
 				echo("<h2> Papers </h2>");
+				echo("<div class='container' id = publications><ol>");
 
 				foreach( $stmt1 as $paper)
 				{
-					PrintPaper($paper["paper_id"], $pdo);
-					$stmt2 = $pdo->prepare('SELECT * FROM papers where paper_id = '.$paper["paper_id"]);
-					$stmt2->execute();
-					$stmt2 = $stmt2->fetchAll();
-
-					echo("<div style='margin:0%; margin-left: 20%'>");
-					echo("<h5 style='margin:0%'>Title: ".$stmt2[0]["title"]." </h5>");
-					echo("<p style='margin:0%'>Abstract: ".$stmt2[0]["abstract"]." </p>");
-					echo("<div style='margin:0%>Link to Article: <a href = \"".$stmt2[0]["link"]."\" alt = 'Link to the paper on'>" .$stmt2[0]["title"]." </a></div>
-					</br></br></div>");
+					Publications($paper["paper_id"], $pdo);
 				}
+				echo("</ol></div>");
 
 				# Posts the Resume
 				if(array_key_exists("Resume", $stmt[0]) && $stmt[0]["Resume"] != "0" && $stmt[0]["Resume"] != "resume\\")

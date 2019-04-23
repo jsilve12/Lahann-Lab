@@ -172,9 +172,9 @@
 		$paper = $papers[0];
 
 		# Prints the paper
-		echo("<div id = ".$ind."paper class = research-patents>");
+		echo("<div id = ".$ind."paper class = research-patents><li>");
 		echo($paper["Author"].", <a href='".$paper["link"]."'>\"".$paper["title"]."\"</a>, ".$paper["Journal"]." (".$paper["Year"].")");
-		echo("</div>");
+		echo("</li></div>");
 	}
 
 	function Publications($numProject, $pdo)
@@ -185,12 +185,12 @@
 		$papers = $papers->fetchall();
 
 		# Display the papers
-		echo("<div id = publications>");
+		echo("<div id = publications><ol>");
 		foreach($papers as $paper)
 		{
 			PrintPaper($paper["paper_id"], $pdo);
 		}
-		echo("</div>");
+		echo("</ol></div>");
 	}
 ?>
 <script src="../functions.js"></script>

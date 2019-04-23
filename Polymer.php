@@ -42,14 +42,9 @@
 								<br>
 							</div>
 							<h4>Selected Publications:</h4>
-							<ol class = "research-patents">
-								<li> X. Qian, L. G. Villa-Diaz, R. Kumar, et al.  "Enhancement of the propagation of human embryonic stem cells by modifications in the gel architecture of PMEDSAH polymer coatings",  Biomaterials, (2014)</li>
-								<li>L. G. Villa-Diaz, A. M. Ross, J. Lahann, P. H. Krebsbach, "The Evolution of Human Pluripotent Stem Cell Culture: From Feeder Cells to Synthetic Coatings", Stem Cells, (2013)</li>
-								<li> L. G. Villa-Diaz, S. E. Brown, Y. Liu, A. M. Ross, J. Lahann, J. M. Parent, P. H. Krebsbach, "Derivation of Mesenchymal Stem Cells from Human Induced Pluripotent Stem Cells Cultured on Synthetic Substrates", Stem Cells (2012)</li>
-								<li>A. M. Ross, H. Nandivada, A. L. Ryan, J. Lahann, "Synthetic Substrates forLong-Term Stem Cell Culture", Polymer (2012)</li>
-								<li>H. Nandivada, L. G. Villa-Diaz, K. S. O'Shea, G. D. Smith, P. H. Krebsbach, J. Lahann, "Fabrication of Synthetic Polymer Coatings and Their Use in Feeder-Free Culture of Human Embryonic Stem Cells", Nature Protocols (2011)</li>
-								<li>L. G. Villa-Diaz*, H. Nandivada*, J. Ding, N. C. Nogueira-de-Souza, P. H. Krebsbach, K. Sue O'Shea, J. Lahann and G. D. Smith "Synthetic polymer coatings for long-term growth of human embryonic stem cells", Nature Biotechnology (2010)</li>
-							</ol>
+							<?php
+								Publications(1, $pdo);
+							?>
 							<h4>Selected Patents:</h4>
 							<ul class="research-patents">
 								<li>H. Nandivada, T. Eyster, L. Villa, G.D. Smith, J. Lahann. "Hydrogel Coatings for Cell Culture", US patent, US 12/530,126 (Pending), US 12/843,468 (Pending), 2011 </li>

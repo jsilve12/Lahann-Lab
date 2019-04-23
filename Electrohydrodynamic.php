@@ -46,21 +46,6 @@
 							<?php
 								Publications(1, $pdo);
 							?>
-							<ol class = "research-patents">
-								<li>M.S. Kwon, J. H. Jordahl, A. W. Phillips, et al. "Multi-luminescent switching of Metal-Free Organic Phosphors for Luminometric Detection of Organic Solvents", Chemical Science, (2016)</li>
-								<li>E. Sokolovskaya, S. Rahmani, A. C. Misra, S. Brase and J. Lahann, "Dual Stimuli-Responsive Microparticles", ACS Applied Materials & Interfaces, (2015).</li>
-								<li>J. Yoon, T. W. Eyster, A. C. Misra, J. Lahann, “Cardiomyocyte-Driven Actuation in Biohybrid Microcylinders” Advanced Materials, (2015)</li>
-								<li>S. Rahmani, S. Saha, H. Durmaz, A. Donini, A. C Misra, J. Yoon, J. Lahann, "Chemically Orthogonal Three-Patch Microparticles", Angew. Chem. Int. Ed., (2014)</li>
-								<li>S. Rahmani, T.-H. Park, A. F. Dishman, and J. Lahann, "Multimodal delivery of irinotecan from microparticles with two distinct compartments", Journal of Controlled Release, (2013)</li>
-								<li>T.-H. Park, T. W. Eyster, J. M. Lumley, et al. "Photoswitchable particles for on-demand degradation and triggered release", Small, (2013)</li>
-								<li>K.	J.	Lee*,	J.	Yoon*,	et	al.  "Spontaneous Shape Reconfiguration in Multicompartmental Microcylinders", PNAS (2012)</li>
-								<li>A.	C	Misra,	S.	Bhaskar,	N.	Clay,	J.	Lahann,  "Multicompartmental Particles for Combined Imaging and siRNA Delivery",Adv.Mat.(2012)</li>
-								<li>S.	Saha,	et	al.  "Chemically Controlled Bending of Compositionally Anisotropic Microcylinders",	Angew.	Chem. Int.	Ed. (2012)</li>
-								<li>J.	Yoon,	K.	J.	Lee,	J.	Lahann,  "Multifunctional Polymer Particles with Distinct Compartments",	J. Mat. Chem. (2011)  (Feature	Article,	Invited)</li>
-								<li>J.	Lahann,  "Recent Progress in Nanobiotechnology: Compartmentalized Micro-and Nanoparticles via Electrohydrodynamic Co-jetting", Small (2011)</li>
-								<li>S.	Bhaskar,	J.	Hitt,	S-W.	L.	Chang,	J.	Lahann,  "Multicompartmental Microcylinders" Angew.	Chem. Int.	Ed. (2009)</li>
-								<li>K.	H.	Roh,	D.	C.	Martin,	J.	Lahann,  "Biphasic Janus particles with nanoscaleanisotropy",,	Nat. Mat. (2005)</li>
-							</ol>
 							<h4>Selected Patents:</h4>
 							<ul class="research-patents">
 								<li>J.	Lahann.	"Red	Blood	Cell-Mimetic	Particles",	US	pat,	2010.</li>
