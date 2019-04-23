@@ -51,6 +51,7 @@
 
 				foreach( $stmt1 as $paper)
 				{
+					PrintPaper($paper["paper_id"], $pdo);
 					$stmt2 = $pdo->prepare('SELECT * FROM papers where paper_id = '.$paper["paper_id"]);
 					$stmt2->execute();
 					$stmt2 = $stmt2->fetchAll();

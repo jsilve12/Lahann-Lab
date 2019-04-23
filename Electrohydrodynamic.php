@@ -10,6 +10,7 @@
 		<div class="site-content">
 			<?php
 				include("generic/header.html");
+				include("functions.php");
 			?>
 
 			<div class="page-head" data-bg-image="images/page-head-2.jpg">
@@ -42,6 +43,9 @@
 							<h4>Applications:</h4>
 							<p>There is a wide range of applications for particles and fibers generated using EHD co-jetting. Particles (A) and fibers (B) equipped with multiple compartments with independent surface and bulk chemistries could be implemented in such fields as drug delivery and theranostics, tissue engineering, stimuli responsive materials, multiplexed bioassays, smart displays, and colorants. Select examples of such technologies are given below. Spatially controlled cell adhesion, where cells can be selectively adhered to only one compartment of a fiber, has been demonstrated on fibers fabricated using EHD co-jetting. Such a technology may have major implications in the field of tissue engineering and 3D cell culture. Novel shape-shifting particles capable of responding to physiological cues have been developed as delivery vehicles for genetic material. Additionally, other bioactive molecules, multiple therapeutics, and imaging agents can be incorporated into the particles. This enables multiple release kinetics from the same particle, as well as the ability to image the particles within cells and animals. Multicompartmental microcylinders with appropriately designed compartments can undergo defined shape reconfiguration, such as shape-shifting (A and B), bending (C and D), or toggling (D). An interesting aspect of these multicompartmental microcylinders is that compartments can be made of different polymers, which selectively respond to a specific stimulus. If multicompartmental microcylinders are exposed to ultrasound as the external stimulus, irreversible one-way shape-shifting can lead to reconfiguration into near perfect spheres (A). Two-way, reversible shape transitions require multicompartmental microcylinders that are comprised of stimulus-responsive as well as inert compartments (C). If the compartments of the microcylinders are, however, composed of a hydrogel and an organogel, the individual compartments display different swelling responses. This can give rise to fully reversible three-way shape-toggling with well-defined convex-to-concave transitions (D). The controlled reconfiguration of multicompartmental microcylinders constitutes important steps towards the biomimetic development of adaptive materials with potential applications as sensors, actuators, or switchable drug delivery carriers.</p>
 							<h4>Selected Publications:</h4>
+							<?php
+								Publications(1, $pdo);
+							?>
 							<ol class = "research-patents">
 								<li>M.S. Kwon, J. H. Jordahl, A. W. Phillips, et al. "Multi-luminescent switching of Metal-Free Organic Phosphors for Luminometric Detection of Organic Solvents", Chemical Science, (2016)</li>
 								<li>E. Sokolovskaya, S. Rahmani, A. C. Misra, S. Brase and J. Lahann, "Dual Stimuli-Responsive Microparticles", ACS Applied Materials & Interfaces, (2015).</li>

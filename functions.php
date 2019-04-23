@@ -164,6 +164,19 @@
 //		}
 	}
 
+	function PrintPaper($ind, $pdo)
+	{
+		$papers = $pdo->prepare("Select * from papers where paper_id = :paper");
+		$papers->execute(array("paper" => $ind));
+		$papers = $papers->fetchall();
+		$paper = $papers[0];
+
+		# Prints the paper
+		echo("<div id = ".$ind."paper class = research-patents>");
+		echo($paper["Author"].", <a href='".$paper["link"]."'>\"".$paper["title"]."\"</a>, ".$paper["Journal"]." (".$paper["Year"].")");
+		echo("</div>");
+	}
+
 	function Publications($numProject, $pdo)
 	{
 		# Get the Papers
@@ -175,7 +188,7 @@
 		echo("<div id = publications>");
 		foreach($papers as $paper)
 		{
-			echo($paper["Author"].",\"".$paper["title"]."\",".$paper["Journal"]."(".$paper["Year"].")");
+			PrintPaper($paper["paper_id"], $pdo);
 		}
 		echo("</div>");
 	}
