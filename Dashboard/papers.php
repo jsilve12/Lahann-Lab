@@ -51,6 +51,7 @@ if($_SESSION['authorization'] < 2)
                     <th>Key</th>
                     <th>Title</th>
                     <th>Author</th>
+                    <th>People Connected</th>
                     <th>Abstract</th>
                     <th>Type</th>
                     <th>Images</th>
@@ -62,6 +63,7 @@ if($_SESSION['authorization'] < 2)
                     <th>Key</th>
                     <th>Title</th>
                     <th>Author</th>
+                    <th>People Connected</th>
                     <th>Abstract</th>
                     <th>Type</th>
                     <th>Images</th>
@@ -81,11 +83,33 @@ if($_SESSION['authorization'] < 2)
                     $news = $news->fetchall();
                     foreach($news as $user)
                     {
+                      # Gets each person
+                      $pep = $pdo->prepare("Select * from people_papers where paper_id = :paper");
+                      $pep->execute(array(
+                        "paper" => $user['paper_id']
+                      ));
+                      $pep = $pep->fetchall();
+
+
                       # Echos each row
                       echo(" <tr>
                                 <td>".$user['paper_id']."</td>
                                 <td id = '".$user['paper_id']."title'>".$user['title']."</td>
                                 <td id = '".$user['paper_id']."Author'>".$user['Author']."</td>
+                                <td id = '".$user["paper_id"]."Connected'>");
+                      # Echos the Connected people
+                      foreach($pep as $people)
+                      {
+                        $name = $pdo->prepare("Select name from person where person_id = :person");
+                        $name->execute(array(
+                          "person" => $people["person_id"]
+                        ));
+                        $name = $name->fetchall();
+                        echo($name[0]["name"]."</br>
+                            <button onclick=\"editFunc('".$user['paper_id']."Connected', ".$people["person_id"]." ,".$people["paper_id"].", 'true',3)\">-</button></br>");
+                      }
+
+                      echo("</td>
                                 <td id = '".$user['paper_id']."abstract'>".$user['abstract']."</td>
                                 <td>
                                   <select id = '".$user['paper_id']."Category' disabled>

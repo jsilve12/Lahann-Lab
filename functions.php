@@ -163,5 +163,10 @@
 //			$user->execute(array("photo" => $fileName, "pk" => $val));
 //		}
 	}
+
+	function Publications($numProject, $pdo)
+	{
+
+	}
 ?>
 <script src="../functions.js"></script>
