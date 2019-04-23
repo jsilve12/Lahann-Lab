@@ -9,14 +9,16 @@
     {
       # Inserts the values
       $ins = $pdo->prepare("Insert Into
-              papers(title, abstract, link, Project, Author)
-              values(:title, :abstract, :link, :Project, :Author)");
+              papers(title, abstract, link, Project, Author, Journal, Year)
+              values(:title, :abstract, :link, :Project, :Author, :Journal, :Year)");
       $ins->execute(array(
         "title" => $_POST['title'],
         "abstract" => $_POST['Abstract'],
         "link" => $_POST['link'],
         "Project" => $_POST['topic'],
-        "Author" => $_POST['author']
+        "Author" => $_POST['author'],
+        "Journal" => $_POST['Journal'],
+        ":Year" => $_POST['Year']
       ));
 
       # Uploads the image
@@ -90,7 +92,18 @@
             <div class="form-label-group">
               <input type="text" name="author" id="author" class="form-control" placeholder="author" required="required" autofocus="autofocus">
               <label for="author">Authors</label>
-              If you separate all the author's names by comma's, and match it to their name in the database, it will show up on their page.
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="text" name="Journal" id="Journal" class="form-control" placeholder="Journal" required="required" autofocus="autofocus">
+              <label for="Journal">Journal</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="text" name="Year" id="Year" class="form-control" placeholder="Year" required="required" autofocus="autofocus">
+              <label for="Year">Year</label>
             </div>
           </div>
           <div class="form-group">

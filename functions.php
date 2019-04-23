@@ -166,7 +166,18 @@
 
 	function Publications($numProject, $pdo)
 	{
+		# Get the Papers
+		$papers = $pdo->prepare("Select * from papers where Project = :proj limit 15");
+		$papers->execute(array("proj" => $numProject));
+		$papers = $papers->fetchall();
 
+		# Display the papers
+		echo("<div id = publications>");
+		foreach($papers as $paper)
+		{
+			echo($paper["Author"].",\"".$paper["title"]."\",".$paper["Journal"]."(".$paper["Year"].")");
+		}
+		echo("</div>");
 	}
 ?>
 <script src="../functions.js"></script>
