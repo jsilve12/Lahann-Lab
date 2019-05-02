@@ -109,6 +109,16 @@ if($_SESSION['authorization'] < 2)
                             <button onclick=\"editFunc('".$user['paper_id']."Connected', ".$people["person_id"]." ,".$people["paper_id"].", 'true',3)\">-</button></br>");
                       }
 
+                      # Add new people
+                      echo("
+                        Add a new Author
+                        <form>
+                          <input type='text' id = ".$user['paper_id']."person>
+                          <input type='submit' onclick = 'addPaperPerson(".$user['paper_id'].")'>
+                        </form>
+                        <div id = Result></div>
+                      ");
+
                       echo("</td>
                                 <td id = '".$user['paper_id']."abstract'>".$user['abstract']."</td>
                                 <td>

@@ -193,3 +193,9 @@ function addImage()
 	console.log(document.getElementById("MoreImages").innerHTML);
 	Document.getElementById("MoreImages").innerHTML = "Hello";
 }
+
+// Adds a person to the person paper nexus
+function addPaperPerson($ind)
+{
+
+}
