@@ -13,8 +13,12 @@
 							<?php
 								include("functions.php");
 								include("generic/header.html");
-								$news = $pdo->prepare("select * from news where Category = 'public' order by pk desc");
-								$news->execute();
+								if($_GET["type"] == "public")
+									echo("<h2><a href='pnews.php?type=lab'>Switch to Lab news</a></h2>");
+								elseif($_GET["type"] == "lab")
+									echo("<h2><a href='pnews.php?type=public'>Switch to Public news</a></h2>");
+								$news = $pdo->prepare("select * from news where Category = :get order by pk desc");
+								$news->execute(array("get" => $_GET["type"]));
 
 								foreach($news as $arti)
 								{
@@ -25,7 +29,7 @@
 
 									#Prints out each article
 									echo("<h3 class = 'section-title'><a href=article.php?article=".$arti["pk"].">".$arti["title"]."</a></h3>");
-									echo("<h5 style='text-align:left'>".$arti["dat"]." by ".$arti["author"]."</h5>");
+									echo("<h5 style='text-align:left'>".$arti["dat"]."</h5>");
 									#echo("<div>".$arti["contents"]."</div>");
 
 									#Prints out each image

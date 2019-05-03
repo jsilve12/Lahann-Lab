@@ -1,7 +1,10 @@
 // Function for updating in the index page
 function editFunc(key, numb, val = document.getElementById(key).innerHTML, check = false, type = 0)
 {
-  if(check === "true" || document.getElementById(key).contentEditable === "true")
+	value = "false"
+	try{value = document.getElementById(key).contentEditable}
+	catch{console.log("Not Editable")}
+  if(check === "true" || value === "true")
   {
 	console.log("Sending");
 	url = "update.php?k=";
@@ -21,7 +24,7 @@ function editFunc(key, numb, val = document.getElementById(key).innerHTML, check
 	  .then((response) =>{
 		if (!response.ok) throw Error(response.statusText);
 		console.log(response);
-		return response.json();
+		return response;
 	  })
 	  .then((data) => {
 		console.log(data);
@@ -195,7 +198,17 @@ function addImage()
 }
 
 // Adds a person to the person paper nexus
-function addPaperPerson($ind)
+function addPaperPerson(ind)
 {
-
+	ind = String(ind);
+	console.log("Hello")
+	console.log(document.getElementById(ind.concat("person")).value);
+	editFunc(
+		document.getElementById(ind.concat("person")).value.concat("%"),
+		"",
+		val = ind,
+		check = "true",
+		type = 4
+	);
+	return false;
 }

@@ -26,13 +26,13 @@
 	}
 	else if($_GET['type'] == 4)
 	{
-		$person = $pdo->prepare("Select * from people where name like :name");
+		$person = $pdo->prepare("Select * from person where name like :name");
 		$person->execute(array("name" => $_GET['k']));
 		$person = $person->fetchall();
-		$person = $person[0]["name"];
+		$_GET['k'] = $person[0]["person_id"];
 
-		$news = $pdo->prepare("Delete from people_papers where paper_id = :pap and person_id = :pk");
-		$news->execute(array("pap" => $_GET['v'], "pk" => $_GET['pk']));
+		$news = $pdo->prepare("Insert into people_papers(person_id, paper_id) values(:per, :pap)");
+		$news->execute(array("pap" => $_GET['v'], "per" => $_GET['k']));
 	}
 	var_dump($_GET);
 	echo($_GET['v']);
