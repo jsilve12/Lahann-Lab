@@ -32,17 +32,21 @@
 									</div>");
 					if($key != 0 && $key != 1 && $key != 5 && $key != 6)
 					{
+						# This is necessary because the last letter is removed from all the other categories when it is printed with the person
+						if($key == 4) {$value = $value."s";}
 						$width = "float:\"left\";\'";
 						if($key == 4) {$width = "width:40%;'";}
 						while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 						{
 							if($key == 2) {$gradStud +=1;}
+
+							# Print the persons information
 							echo("<div class = 'post person' style='".$width.">
 									<h3 class = 'entry-title'>
 										".$row['name']."
 									</h3>
 									<h4>
-										".$value."
+										".substr($value, 0, strlen($value)-1)."
 									</h4>");
 							echo("	<img src = \"images/".trim($row['photo'])."\" class = 'featured-image'>
 									<p>".$row['department']." <br> <a href= person.php?person=".$row['person_id']." alt='".$row['name']."'s personal page'/>".$row['name']."'s Website</a></p>

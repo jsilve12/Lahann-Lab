@@ -130,7 +130,8 @@ sub {
   bottom: -0.25em; }
 
 img {
-  border: 0; }
+  border: 0; 
+}
 
 svg:not(:root) {
   overflow: hidden; }
@@ -288,6 +289,12 @@ form input[type="submit"], form button, form input[type="reset"] {
     display: block;
     overflow: hidden;
     height: 0; }
+  @media (max-width: 768px) {
+  .container {
+    width: 80%; } }
+  @media (max-width: 768px) {
+  .container img{
+    width: 100%; } }
   @media (min-width: 768px) {
     .container {
       width: 750px; } }
@@ -1276,6 +1283,13 @@ form input[type="submit"], form button, form input[type="reset"] {
     color: white;
     width: 80%;
     margin: 0 auto; }
+    @media screen and (max-width: 600px)
+    {
+      .slide-content{
+        width:80%;
+      }
+    }
+    
     .hero .slide-content .slide-title {
       font-size: 60px;
       font-size: 4em;

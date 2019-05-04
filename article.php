@@ -43,19 +43,6 @@
 						</div>
 					</div>
 				</div>
-
-
-				<div class="fullwidth-block" data-bg-color="#edf2f4">
-					<div class="container">
-						<div class="subscribe-form">
-							<h2>Join our newsletter</h2>
-							<form action="#">
-								<input type="text" placeholder="Enter your email">
-								<input type="submit" value="Subscribe">
-							</form>
-						</div>
-					</div>
-				</div>
 			<?php
 				include("generic/footer.html");
 			?>
