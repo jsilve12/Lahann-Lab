@@ -13,10 +13,14 @@
 							<?php
 								include("functions.php");
 								include("generic/header.html");
+
+								# Allows switching back and forth between the different news types
 								if($_GET["type"] == "public")
 									echo("<h2><a href='pnews.php?type=lab'>Switch to Lab news</a></h2>");
 								elseif($_GET["type"] == "lab")
 									echo("<h2><a href='pnews.php?type=public'>Switch to Public news</a></h2>");
+
+								# Get the articles
 								$news = $pdo->prepare("select * from news where Category = :get order by pk desc");
 								$news->execute(array("get" => $_GET["type"]));
 

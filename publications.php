@@ -12,9 +12,15 @@
 						<div class="container">
 							<div class="">
 							<?php
+
+								# Allows switching back and forth between the different publication locations
+								if($_GET["location"] == "Michigan")
+									echo("<h2><a href='publications.php?location=Germany'>Switch to German Publications</a></h2>");
+								elseif($_GET["location"] == "Germany")
+									echo("<h2><a href='publications.php?location=Michigan'>Switch to Michigan Publications</a></h2>");
 								include("functions.php");
-								$news = $pdo->prepare("select * from papers order by paper_id desc");
-								$news->execute();
+								$news = $pdo->prepare("select * from papers where Location = :loc or Location = 'both' order by paper_id desc");
+								$news->execute(array("loc" => $_GET["location"]));
 
 								foreach($news as $arti)
 								{
