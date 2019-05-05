@@ -54,6 +54,7 @@ if($_SESSION['authorization'] < 2)
                     <th>People Connected</th>
                     <th>Abstract</th>
                     <th>Type</th>
+                    <th>Location</th>
                     <th>Images</th>
                     <th>Edit</th>
                   </tr>
@@ -66,6 +67,7 @@ if($_SESSION['authorization'] < 2)
                     <th>People Connected</th>
                     <th>Abstract</th>
                     <th>Type</th>
+                    <th>Location</th>
                     <th>Images</th>
                     <th>Edit</th>
                   </tr>
@@ -119,6 +121,7 @@ if($_SESSION['authorization'] < 2)
                         <div id = Result></div>
                       ");
 
+                      # For which project is selected
                       echo("</td>
                                 <td id = '".$user['paper_id']."abstract'>".$user['abstract']."</td>
                                 <td>
@@ -128,11 +131,23 @@ if($_SESSION['authorization'] < 2)
                                     <option value = '3' ".indCheck($user, "Project", 3).">Co-Jetting of Particles and Fibers</option>
                                   </select>
                                 </td>
-                                <td id = '".$user['paper_id']."images'>
-                                  <img style='width:80%;margin:10%;' src=../".$user["Image"].">
                                 ");
+
+                      # Allows you to pick a location
+                      echo("</td>
+                                <td>
+                                  <select id = '".$user['paper_id']."Loc' disabled>
+                                    <option value = 'Germany' ".indCheck($user, "Location", "Germany").">Germany</option>
+									<option value = 'Michigan' ".indCheck($user, "Location", "Michigan").">Michigan</option>
+                                    <option value = 'Both' ".indCheck($user, "Location", "Both").">Both</option>
+                                  </select>
+                                </td>
+                                ");
+
                       # Allows a new image to be uploaded
                       echo("
+                        <td id = '".$user['paper_id']."images'>
+                                  <img style='width:80%;margin:10%;' src=../".$user["Image"].">
                         <div class='col-xl-3 col-sm-6 mb-3'>
                           <form action='imgupdate.php?type=3&key=".$user['paper_id']."' method='post' enctype='multipart/form-data'>
                             Upload a new image (Note: to view the new image, refresh)

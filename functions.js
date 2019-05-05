@@ -157,11 +157,18 @@ function paperEditFunc(personId)
 			editFunc("Project", personId, selector[selector.selectedIndex].value, "true", 2);
 		}
 		catch{}
+		try
+		{
+			var selector = document.getElementById(personId.toString().concat("Loc"));
+			editFunc("Location", personId, selector[selector.selectedIndex].value, "true", 2);
+		}
+		catch{}
 
 		document.getElementById(personId.toString().concat("title")).contentEditable = false;
 		document.getElementById(personId.toString().concat("Author")).contentEditable = false;
 		document.getElementById(personId.toString().concat("abstract")).contentEditable = false;
 		document.getElementById(personId.toString().concat("Category")).disabled = true;
+		document.getElementById(personId.toString().concat("Loc")).disabled = true;
 	}
 	else
 	{
@@ -169,6 +176,7 @@ function paperEditFunc(personId)
 		document.getElementById(personId.toString().concat("Author")).contentEditable = true;
 		document.getElementById(personId.toString().concat("abstract")).contentEditable = true;
 		document.getElementById(personId.toString().concat("Category")).disabled = false;
+		document.getElementById(personId.toString().concat("Loc")).disabled = false;
 	}
 }
 
